@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-listpicker": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-listpicker"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

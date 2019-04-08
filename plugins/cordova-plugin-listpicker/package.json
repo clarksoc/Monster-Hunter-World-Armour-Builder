@@ -1,0 +1,67 @@
+{
+  "_from": "cordova-plugin-listpicker",
+  "_id": "cordova-plugin-listpicker@2.2.2",
+  "_inBundle": false,
+  "_integrity": "sha1-ClduZCptMO3/Vs6IXYxJEiUIZPs=",
+  "_location": "/cordova-plugin-listpicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-listpicker",
+    "name": "cordova-plugin-listpicker",
+    "escapedName": "cordova-plugin-listpicker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-listpicker/-/cordova-plugin-listpicker-2.2.2.tgz",
+  "_shasum": "0a576e642a6d30edff56ce885d8c4912250864fb",
+  "_spec": "cordova-plugin-listpicker",
+  "_where": "G:\\School\\MobileWebApp\\Babanski_Final_Project",
+  "author": {
+    "name": "Robert Hovhannisyan"
+  },
+  "bugs": {
+    "url": "https://github.com/roberthovhannisyan/PhoneGap-Plugin-ListPicker/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-listpicker",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "PhoneGap plugin to display a list picker dialog for Android and iOS.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/roberthovhannisyan/PhoneGap-Plugin-ListPicker#readme",
+  "keywords": [
+    "phonegap",
+    "android",
+    "ios",
+    "list",
+    "picker",
+    "dialog",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-listpicker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roberthovhannisyan/PhoneGap-Plugin-ListPicker.git"
+  },
+  "version": "2.2.2"
+}
