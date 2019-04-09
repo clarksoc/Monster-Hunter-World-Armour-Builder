@@ -1,3 +1,4 @@
+// hi con-kun paint me like one of your french gurls
 
 var app = {
     // Application Constructor
