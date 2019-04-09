@@ -1,5 +1,5 @@
 // hi con-kun paint me like one of your french gurls
-
+// he wassup nigga
 var app = {
     // Application Constructor
     initialize: function() {
