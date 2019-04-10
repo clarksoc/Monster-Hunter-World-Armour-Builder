@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
 
         <script src="js/jquery/jquery-1.12.4.min.js" type="text/javascript"></script>
         <link href="js/jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
@@ -9,8 +9,12 @@
         <title>Monster Hunter Armour Builder</title>
 
         <style>
-            #weaponJewel_1, #weaponJewel_2 {
+            #weaponJewel_1, #weaponJewel_2, #selectWeapon {
                 display: none;
+            }
+            table, tr, td{
+                border: 1px solid black;
+
             }
         </style>
     </head>
@@ -18,28 +22,66 @@
     <body>
         <div data-role="page">
             <h1>Monster Hunter World Loadout Builder</h1>
-            <form id="myForm">
-                <div>
-                    <label for="selectWeapon">Weapon:</label>
-                    <select id = "selectWeapon">
-                        <option value="default">Select Weapon:</option>
-                    </select>
-                    <div id = "weaponJewel_1">
-                        <label for="selectWeaponJewel_1"></label>
-                        <select id="selectWeaponJewel_1">
-                            <option value="default">Select Jewel:</option>
+
+            <table class="table" id="weaponTable">
+                <thead>
+                <tr>
+                    <th scope="col">Select Weapon</th>
+                    <th scope="col">Raw Damage</th>
+                    <th scope="col">Element</th>
+                    <th scope="col">Element Damage</th>
+                    <th scope="col">Affinity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <label for="selectWeaponCat"></label>
+                        <select id = "selectWeaponCat">
+                            <option value="default">Select Weapon Category:</option>
                         </select>
-                    </div>
-                    <div id = "weaponJewel_2">
-                    <label for="selectWeaponJewel_2"></label>
-                        <select id="selectWeaponJewel_2">
-                            <option value="default">Select Jewel:</option>
-                        </select>
-                    </div>
-                </div>
+                        <div>
+                            <label for="selectWeapon"></label>
+                            <select id="selectWeapon">
+                                <option value="default">Select Weapon:</option>
+                            </select>
+                        </div>
+                        <div id = "weaponJewel_1">
+                            <label for="selectWeaponJewel_1"></label>
+                            <select id="selectWeaponJewel_1">
+                                <option value="default">Select Jewel:</option>
+                            </select>
+                        </div>
+                        <div id = "weaponJewel_2">
+                            <label for="selectWeaponJewel_2"></label>
+                            <select id="selectWeaponJewel_2">
+                                <option value="default">Select Jewel:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td id="rawDamage">
+                        0
+                    </td>
+                    <td id="eleName">
+                        normal
+                    </td>
+                    <td id="eleDamage">
+                        0
+                    </td>
+                    <td id="affinity">
+                        0
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+            <form action="preset.html">
+                <input type="submit" value="Go to Preset">
             </form>
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
     </body>
 </html>

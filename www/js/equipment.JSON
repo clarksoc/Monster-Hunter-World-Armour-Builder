@@ -1,5 +1,6 @@
-{"equipment": {
-    "greatswords": {
+{
+	"equipment": [{
+    "greatswords": [{
 	"busti":{
         	"name": "Buster Sword I",
         	"damage": 384,
@@ -63,9 +64,9 @@
 		"eledamage": 240,
 		"affinity": 15,
 		"decoration": 1
-	},
-    },
-    "longswords": {
+	}
+    }],
+    "longswords": [{
 	"bonei":{
         	"name": "Bone Shotel I",
         	"damage": 297,
@@ -129,7 +130,7 @@
 		"eledamage": 210,
 		"affinity": -10,
 		"decoration": 2
-	},
-    }
+	}
+    }]
 
-}} 
+}]}
