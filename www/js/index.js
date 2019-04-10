@@ -31,6 +31,8 @@ app.initialize();
 $(document).on("pagecreate", function () {
 
     var $selectWeapon = $('#selectWeapon');
+   // var $weaponCategory = $('#weaponCategory')
+    var $weapons = $('#weapons');
     var $selectWeaponCat = $('#selectWeaponCat');
     var $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
     var $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
@@ -54,6 +56,9 @@ $(document).on("pagecreate", function () {
         Defence1 : 'Defence 1'
     };
 
+   /* for (index in longswordObject) {
+        weaponSelect.options[weaponSelect.options.length] = new Option(longswordObject[index], index);
+    }*/
     var selectWeaponCategory = $selectWeaponCat.get(0);
     for(index in weaponCategoryObject) {
         selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[index], index);
@@ -66,18 +71,22 @@ $(document).on("pagecreate", function () {
     for(index in jewelObject) {
         selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
     }
+    var selectWeapon = $selectWeapon.get(0);
+    for (index in greatswordObject) {
+        selectWeapon.options[selectWeapon.options.length] = new Option(greatswordObject[index], index);
+    }
 
 
 
     $('select').on('change', function (event) {
         event.preventDefault();
-        var selectWeapon = $selectWeapon.get(0);
+
 
         var weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
         var weaponCategoryText = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].text;
 
-        var weaponValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
-        var weaponText = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].text;
+        var weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
+        var weaponText = selectWeapon.options[selectWeapon.selectedIndex].text;
 
         var weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
         var weaponJewel_1Text = selectJewel_1.options[selectJewel_1.selectedIndex].text;
@@ -85,28 +94,28 @@ $(document).on("pagecreate", function () {
         var weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
         var weaponJewel_2Text = selectJewel_2.options[selectJewel_2.selectedIndex].text;
 
-        if(weaponCategoryValue === "default"){
+      /*  if(weaponCategoryValue === '1') {
+            for (index in greatswordObject) {
+                selectWeapon.options[selectWeapon.options.length] = new Option(greatswordObject[index], index);
+            }
+        }
+        else if(weaponCategoryValue === '2'){
+            for (index in longswordObject) {
+                selectWeapon.options[selectWeapon.options.length] = new Option(longswordObject[index], index);
+            }
+        }*/
+        if(weaponCategoryValue === 'default') {
             window.alert("Please Select a Weapon");
-        }else{
-            if(weaponCategoryValue === 1){
-                for(index in weaponCategoryObject) {
-                    selectWeapon.options[selectWeapon.options.length] = new Option(greatswordObject[index], index);
-                }
-                $selectWeapon.show();
-            }
-            else if(weaponCategoryValue === 2){
-                for(index in weaponCategoryObject) {
-                    selectWeapon.options[selectWeapon.options.length] = new Option(longswordObject[index], index);
-                }
-                $selectWeapon.show();
-            }
+        }
+        else{
+            $weapons.show();
         }
 
-        if(weaponValue === "default") {
+      if(weaponValue === "default") {
             window.alert("Please Select a Weapon");
         }
-        else {
-            //window.alert("Text: " + weaponText + "\nValue: " + weaponValue);
+      else {
+           // window.alert("Text: " + weaponCategoryText + "\nValue: " + weaponCategoryValue);
             if(weaponValue === '1'){
                 $weaponJewel_1.show();
                 weaponJewel_2Value.value = "default";

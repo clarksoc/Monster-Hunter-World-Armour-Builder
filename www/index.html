@@ -9,7 +9,7 @@
         <title>Monster Hunter Armour Builder</title>
 
         <style>
-            #weaponJewel_1, #weaponJewel_2, #selectWeapon {
+            #weaponJewel_1, #weaponJewel_2, #weapons {
                 display: none;
             }
             table, tr, td{
@@ -36,11 +36,13 @@
                 <tbody>
                 <tr>
                     <td>
+                        <div id = "weaponCategory">
                         <label for="selectWeaponCat"></label>
                         <select id = "selectWeaponCat">
                             <option value="default">Select Weapon Category:</option>
                         </select>
-                        <div>
+                        </div>
+                        <div id="weapons">
                             <label for="selectWeapon"></label>
                             <select id="selectWeapon">
                                 <option value="default">Select Weapon:</option>
