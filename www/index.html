@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
 
         <script src="js/jquery/jquery-1.12.4.min.js" type="text/javascript"></script>
@@ -9,12 +10,35 @@
         <title>Monster Hunter Armour Builder</title>
 
         <style>
-            #weaponJewel_1, #weaponJewel_2, #weapons {
+            #weaponJewel_1, #weaponJewel_2, #weapons, #helmJewel_1, #helmJewel_2 {
                 display: none;
+                height: fit-content;
             }
-            table, tr, td{
+            table{
                 border: 1px solid black;
+                width: 90%;
 
+            }
+            th{
+
+            }
+            td{
+                border: 1px solid black;
+                font-size: 1vm;
+                text-align: center;
+
+            }
+            tr{
+                border: 1px solid black;
+            }
+            .first-cell{
+                width: 30%;
+            }
+            .next-cells-w{
+                width: 15.75%;
+            }
+            .next-cells-a{
+                width: 9%;
             }
         </style>
     </head>
@@ -22,20 +46,21 @@
     <body>
         <div data-role="page">
             <h1>Monster Hunter World Loadout Builder</h1>
+            <div class = "col-md-10 offset-md-1">
 
             <table class="table" id="weaponTable">
                 <thead>
                 <tr>
-                    <th scope="col">Select Weapon</th>
-                    <th scope="col">Raw Damage</th>
-                    <th scope="col">Element</th>
-                    <th scope="col">Element Damage</th>
-                    <th scope="col">Affinity</th>
+                    <th colspan="5" >Select Weapon</th>
+                    <th colspan="5" >Raw Damage</th>
+                    <th colspan="5" >Element</th>
+                    <th colspan="5" >Element Damage</th>
+                    <th colspan="5" >Affinity</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
+                    <td colspan="5" class="first-cell">
                         <div id = "weaponCategory">
                         <label for="selectWeaponCat"></label>
                         <select id = "selectWeaponCat">
@@ -49,7 +74,7 @@
                             </select>
                         </div>
                         <div id = "weaponJewel_1">
-                            <label for="selectWeaponJewel_1"></label>
+                    <label for="selectWeaponJewel_1"></label>
                             <select id="selectWeaponJewel_1">
                                 <option value="default">Select Jewel:</option>
                             </select>
@@ -61,23 +86,211 @@
                             </select>
                         </div>
                     </td>
-                    <td id="rawDamage">
+                    <td colspan="5" id="rawDamage" class="next-cells-w">
                         0
                     </td>
-                    <td id="eleName">
-                        normal
+                    <td colspan="5" id="eleName" class="next-cells-w">
+                        --None--
                     </td>
-                    <td id="eleDamage">
+                    <td colspan="5" id="eleDamage" class="next-cells-w">
                         0
                     </td>
-                    <td id="affinity">
+                    <td colspan="5" id="affinity" class="next-cells-w">
                         0
                     </td>
 
                 </tr>
                 </tbody>
             </table>
-            <form action="preset.html">
+            </div>
+            <div class = "col-md-10 offset-md-1">
+                <table class="table" id="armourTable">
+                <thead>
+                <tr>
+                    <th colspan="8">Select Armour</th>
+                    <th colspan="8">Skill</th>
+                    <th colspan="8">Defense</th>
+                    <th colspan="8">Fire</th>
+                    <th colspan="8">Water</th>
+                    <th colspan="8">Thunder</th>
+                    <th colspan="8">Ice</th>
+                    <th colspan="8">Dragon</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="8" class="next-cells-a" class="first-cell">
+                        <div id = "armourHelm">
+                            <label for="selectHelm"></label>
+                            <select id = "selectHelm">
+                                <option value="default">Select Helmet:</option>
+                            </select>
+                        </div>
+                        <div id = "helmJewel_1">
+                            <label for="selectHelmJewel_1"></label>
+                            <select id="selectHelmJewel_1">
+                                <option value="default">Select Jewel:</option>
+                            </select>
+                        </div>
+                        <div id = "helmJewel_2">
+                            <label for="selectHelmJewel_2"></label>
+                            <select id="selectHelmJewel_2">
+                                <option value="default">Select Jewel:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmSkill">
+                        --None--
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmDefense">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmFire">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmWater">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmThunder">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmIce">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="helmDragon">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="next-cells-a">
+                        <div id = "armourChest">
+                            <label for="selectChest"></label>
+                            <select id = "selectChest">
+                                <option value="default">Select Chest Piece:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestSkill">
+                        --None--
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestDefense">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestFire">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestWater">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestThunder">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestIce">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="chestDragon">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="next-cells-a">
+                        <div id = "armourArms">
+                            <label for="selectArms"></label>
+                            <select id = "selectArms">
+                                <option value="default">Select Arms:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsSkill">
+                        --None--
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsDefense">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsFire">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsWater">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsThunder">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsIce">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="armsDragon">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="next-cells-a">
+                        <div id = "armourWaist">
+                            <label for="selectWaist"></label>
+                            <select id = "selectWaist">
+                                <option value="default">Select Waist:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistSkill">
+                        --None--
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistDefense">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistFire">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistWater">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistThunder">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistIce">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="waistDragon">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="next-cells-a">
+                        <div id = "armourLegs">
+                            <label for="selectLegs"></label>
+                            <select id = "selectLegs">
+                                <option value="default">Select Legs:</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsSkill">
+                        --None--
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsDefense">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsFire">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsWater">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsThunder">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsIce">
+                        0
+                    </td>
+                    <td colspan="8" class="next-cells-a" id="legsDragon">
+                        0
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+                <form action="preset.html">
                 <input type="submit" value="Go to Preset">
             </form>
         </div>

@@ -25,4 +25,5 @@
     </platform>
     <plugin name="cordova-plugin-listpicker" spec="^2.2.2" />
     <engine name="android" spec="^7.1.4" />
+    <plugin name="cordova-plugin-shake" spec="^0.6.0" />
 </widget>
