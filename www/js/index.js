@@ -30,17 +30,22 @@ app.initialize();
 
 $(document).on("pagecreate", function () {
 
+
     var requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
 
-    var gear;
+    request.onload = function () {
+       var gear = request.response;
+       window.alert(gear['equipment'][0]['greatswords'][5]['name']);
 
-    request.onload = function ( ) {
-        gear = request.response;
+       // todo works just need to goin access to it out side of here
+
     }
+
+
 
     var $selectWeapon = $('#selectWeapon');
    // var $weaponCategory = $('#weaponCategory')
@@ -56,7 +61,7 @@ $(document).on("pagecreate", function () {
         2 : 'Longsword'
     };
     var greatswordObject = {
-        1 : ['equipment'][0]['greatswords'][0]['name'],  // todo
+        1 : '',  //gear['equipment'][0]['greatswords'][0]['name'],  // todo
         2 : 'Greatsword II'
     };
     var longswordObject = {

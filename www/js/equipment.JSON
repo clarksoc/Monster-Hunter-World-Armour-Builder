@@ -69,70 +69,68 @@
       ],
       "longswords": [
         {
-          "info": {
-            "name": "Bone Shotel I",
-            "damage": 297,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          },
-          "info": {
-            "name": "Bone Shotel II",
-            "damage": 330,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          },
-          "info": {
-            "name": "Bone Shotel III",
-            "damage": 396,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          },
-          "info": {
-            "name": "Hard Bone Shotel I",
-            "damage": 429,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 10,
-            "decoration": 0
-          },
-          "info": {
-            "name": "Hard Bone Shotel II",
-            "damage": 495,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          },
-          "info": {
-            "name": "Hard Bone Shotel III",
-            "damage": 528,
-            "element": "sleep",
-            "eledamage": 70,
-            "affinity": 0,
-            "decoration": 1
-          },
-          "info": {
-            "name": "Rookslayer Long Sword",
-            "damage": 561,
-            "element": "blast",
-            "eledamage": 150,
-            "affinity": -10,
-            "decoration": 2
-          },
-          "info": {
-            "name": "Bazel Varga Rookslayer",
-            "damage": 660,
-            "element": "blast",
-            "eledamage": 210,
-            "affinity": -10,
-            "decoration": 2
-          }
+          "name": "Bone Shotel I",
+          "damage": 297,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
+        },
+        {
+          "name": "Bone Shotel II",
+          "damage": 330,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
+        },
+        {
+          "name": "Bone Shotel III",
+          "damage": 396,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
+        },
+        {
+          "name": "Hard Bone Shotel I",
+          "damage": 429,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 10,
+          "decoration": 0
+        },
+        {
+          "name": "Hard Bone Shotel II",
+          "damage": 495,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
+        },
+        {
+          "name": "Hard Bone Shotel III",
+          "damage": 528,
+          "element": "sleep",
+          "eledamage": 70,
+          "affinity": 0,
+          "decoration": 1
+        },
+        {
+          "name": "Rookslayer Long Sword",
+          "damage": 561,
+          "element": "blast",
+          "eledamage": 150,
+          "affinity": -10,
+          "decoration": 2
+        },
+        {
+          "name": "Bazel Varga Rookslayer",
+          "damage": 660,
+          "element": "blast",
+          "eledamage": 210,
+          "affinity": -10,
+          "decoration": 2
         }
       ]
     }
