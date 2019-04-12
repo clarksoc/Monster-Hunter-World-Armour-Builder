@@ -30,7 +30,17 @@ app.initialize();
 
 $(document).on("pagecreate", function () {
 
-    let gear = require('www/js/equipment.JSON');
+    var requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    var gear;
+
+    request.onload = function ( ) {
+        gear = request.response;
+    }
 
     var $selectWeapon = $('#selectWeapon');
    // var $weaponCategory = $('#weaponCategory')
@@ -46,7 +56,7 @@ $(document).on("pagecreate", function () {
         2 : 'Longsword'
     };
     var greatswordObject = {
-        1 : 'Greatsword I',
+        1 : ['equipment'][0]['greatswords'][0]['info'].name,  // todo
         2 : 'Greatsword II'
     };
     var longswordObject = {
@@ -107,14 +117,14 @@ $(document).on("pagecreate", function () {
             }
         }*/
         if(weaponCategoryValue === 'default') {
-            window.alert("Please Select a Weapon");
+           //window.alert("Please Select a Weapon");
         }
         else{
             $weapons.show();
         }
 
       if(weaponValue === "default") {
-            window.alert("Please Select a Weapon");
+            //window.alert("Please Select a Weapon");
         }
       else {
            // window.alert("Text: " + weaponCategoryText + "\nValue: " + weaponCategoryValue);

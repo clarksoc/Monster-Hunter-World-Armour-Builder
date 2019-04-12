@@ -3,63 +3,77 @@
     {
       "greatswords": [
         {
-          "busti": {
+          "info": {
             "name": "Buster Sword I",
             "damage": 384,
             "element": "normal",
             "eledamage": 0,
             "affinity": 0,
             "decoration": 0
-          },
-          "bustii": {
+          }
+        },
+        {
+          "info": {
             "name": "Buster Sword II",
             "damage": 432,
             "element": "normal",
             "eledamage": 0,
             "affinity": 0,
             "decoration": 0
-          },
-          "bustiii": {
+          }
+        },
+        {
+          "info": {
             "name": "Buster Sword III",
             "damage": 480,
             "element": "normal",
             "eledamage": 0,
             "affinity": 0,
             "decoration": 0
-          },
-          "flamei": {
+          }
+        },
+        {
+          "info": {
             "name": "Flame Blade I",
             "damage": 672,
             "element": "fire",
             "eledamage": 120,
             "affinity": 10,
             "decoration": 0
-          },
-          "flameii": {
+          }
+        },
+        {
+          "info": {
             "name": "Flame Blade I",
             "damage": 720,
             "element": "fire",
             "eledamage": 150,
             "affinity": 10,
             "decoration": 0
-          },
-          "redwing": {
+          }
+        },
+        {
+          "info": {
             "name": "Red Wing",
             "damage": 768,
             "element": "fire",
             "eledamage": 180,
             "affinity": 15,
             "decoration": 1
-          },
-          "bluewing": {
+          }
+        },
+        {
+          "info": {
             "name": "Blue Wing",
             "damage": 816,
             "element": "fire",
             "eledamage": 210,
             "affinity": 15,
             "decoration": 1
-          },
-          "rathglint": {
+          }
+        },
+        {
+          "info": {
             "name": "Rathalos Glinsword",
             "damage": 912,
             "element": "fire",
@@ -71,7 +85,7 @@
       ],
       "longswords": [
         {
-          "bonei": {
+          "info": {
             "name": "Bone Shotel I",
             "damage": 297,
             "element": "normal",
@@ -79,7 +93,7 @@
             "affinity": 0,
             "decoration": 0
           },
-          "boneii": {
+          "info": {
             "name": "Bone Shotel II",
             "damage": 330,
             "element": "normal",
@@ -87,7 +101,7 @@
             "affinity": 0,
             "decoration": 0
           },
-          "boneiii": {
+          "info": {
             "name": "Bone Shotel III",
             "damage": 396,
             "element": "normal",
@@ -95,7 +109,7 @@
             "affinity": 0,
             "decoration": 0
           },
-          "hardbi": {
+          "info": {
             "name": "Hard Bone Shotel I",
             "damage": 429,
             "element": "normal",
@@ -103,7 +117,7 @@
             "affinity": 10,
             "decoration": 0
           },
-          "hardbii": {
+          "info": {
             "name": "Hard Bone Shotel II",
             "damage": 495,
             "element": "normal",
@@ -111,7 +125,7 @@
             "affinity": 0,
             "decoration": 0
           },
-          "hardbiii": {
+          "info": {
             "name": "Hard Bone Shotel III",
             "damage": 528,
             "element": "sleep",
@@ -119,7 +133,7 @@
             "affinity": 0,
             "decoration": 1
           },
-          "rook": {
+          "info": {
             "name": "Rookslayer Long Sword",
             "damage": 561,
             "element": "blast",
@@ -127,7 +141,7 @@
             "affinity": -10,
             "decoration": 2
           },
-          "bazel": {
+          "info": {
             "name": "Bazel Varga Rookslayer",
             "damage": 660,
             "element": "blast",
