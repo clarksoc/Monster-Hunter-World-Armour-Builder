@@ -48,8 +48,8 @@ $(document).on("pagecreate", function () {
         var $weaponJewel_2 = $('#weaponJewel_2');
 
         var weaponCategoryObject = {
-            1: 'Greatsword',
-            2: 'Longsword'
+            0: 'Greatsword',
+            1: 'Longsword'
         };
 
         var jewelObject = {
@@ -73,7 +73,7 @@ $(document).on("pagecreate", function () {
             selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
         }
         var selectWeapon = $selectWeapon.get(0);
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < gear['equipment'][0]['greatswords'].length; i++) {
             selectWeapon.options[selectWeapon.options.length] = new Option(gear['equipment'][0]['greatswords'][i]['name'], i);
         }
 
@@ -81,6 +81,7 @@ $(document).on("pagecreate", function () {
         $('select').on('change', function (event) {
             event.preventDefault();
 
+            var curWep;
 
             var weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
             //var weaponCategoryText = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].text;
@@ -108,32 +109,37 @@ $(document).on("pagecreate", function () {
               */
 
             if (weaponCategoryValue === 'default') {
-                //window.alert("Please Select a Weapon");
+                window.alert("Please Select a Weapon");
             } else {
                 $weapons.show();
+                window.alert(curWep);
+                //window.alert(weaponCategoryValue); // gives value of equipment index
             }
 
             if (weaponValue === 'default') {
-
             } else {
-                // window.alert("Text: " + weaponCategoryText + "\nValue: " + weaponCategoryValue);
-                if (weaponValue === '1') {
+                //window.alert(weaponValue); // gives value of long / great sword index
+
+                //curWep = gear[]
+
+
+                var DecorValue = 0; // temp
+                if (DecorValue === 1) {
                     $weaponJewel_1.show();
                     weaponJewel_2Value.value = "default";
                     $weaponJewel_2.hide();
                     if (weaponJewel_1Value !== "default") {
-                        //window.alert("Text: " + weaponJewel_1Text + "\nValue: " + weaponJewel_1Value);
+                        // todo
                     }
-                } else if (weaponValue === '2') {
+                } else if (DecorValue === 2){
                     $weaponJewel_1.show();
                     $weaponJewel_2.show();
                     if (weaponJewel_1Value !== "default") {
-                        //window.alert("Text: " + weaponJewel_1Text + "\nValue: " + weaponJewel_1Value);
+                        // todo
                     }
                     if (weaponJewel_2Value !== "default") {
-                        //window.alert("Text: " + weaponJewel_2Text + "\nValue: " + weaponJewel_2Value);
+                        // todo
                     }
-
                 } else {
                     weaponJewel_1Value.value = "default";
                     weaponJewel_2Value.value = "default";
