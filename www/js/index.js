@@ -30,6 +30,8 @@ app.initialize();
 
 $(document).on("pagecreate", function () {
 
+    let gear = require('www/js/equipment.JSON');
+
     var $selectWeapon = $('#selectWeapon');
    // var $weaponCategory = $('#weaponCategory')
     var $weapons = $('#weapons');
