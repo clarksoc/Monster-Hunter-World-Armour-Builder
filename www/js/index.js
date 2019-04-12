@@ -47,6 +47,58 @@ $(document).on("pagecreate", function () {
         var $weaponJewel_1 = $('#weaponJewel_1');
         var $weaponJewel_2 = $('#weaponJewel_2');
 
+        var $rawDamage = $('#rawDamage');
+        var $eleName = $('#eleName');
+        var $eleDagame = $('#eleDamage');
+        var $affinity = $('#affinity');
+
+        var $selectHelm = $('#selectHelm');
+        var $selectHelmJewel_1 = $('#selectHelmJewel_1');
+        var $selectHelmJewel_2 = $('#selectHelmJewel_2');
+        var $helmSkill = $('#helmSkill');
+        var $helmDefense = $('#helmDefense');
+        var $helmFire = $('#helmFire');
+        var $helmWater = $('#helmWater');
+        var $helmThunder = $('#helmThunder');
+        var $helmIce = $('#helmIce');
+        var $helmDragon = $('#helmDragon');
+
+        var $selectChest = $('#selectChest');
+        var $chestSkill = $('#chestSkill');
+        var $chestDefense = $('#chestDefense');
+        var $chestFire = $('#chestFire');
+        var $chestWater = $('#chestWater');
+        var $chestThunder = $('#chestThunder');
+        var $chestIce = $('#chestIce');
+        var $chestDragon = $('#chestDragon');
+
+        var $selectArms = $('#selectArms');
+        var $armsSkill = $('#armsSkill');
+        var $armsDefense = $('#armsDefense');
+        var $armsFire = $('#armsFire');
+        var $armsWater = $('#armsWater');
+        var $armsThunder = $('#armsThunder');
+        var $armsIce = $('#armsIce');
+        var $armsDragon = $('#armsDragon');
+
+        var $selectWaist = $('#selectWaist');
+        var $waistSkill = $('#waistSkill');
+        var $waistDefense = $('#waistDefense');
+        var $waistFire = $('#waistFire');
+        var $waistWater = $('#waistWater');
+        var $waistThunder = $('#waistThunder');
+        var $waistIce = $('#waistIce');
+        var $waistDragon = $('#waistDragon');
+
+        var $selectLegs = $('#selectLegs');
+        var $legsSkill = $('#legsSkill');
+        var $legsDefense = $('#legsDefense');
+        var $legsFire = $('#legsFire');
+        var $legsWater = $('#legsWater');
+        var $legsThunder = $('#legsThunder');
+        var $legsIce = $('#legsIce');
+        var $legsDragon = $('#legsDragon');
+
         var weaponCategoryObject = {
             0: 'Greatsword',
             1: 'Longsword'
