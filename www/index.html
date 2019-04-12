@@ -2,12 +2,12 @@
 <html>
     <head>
         <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
-
-        <script src="js/jquery/jquery-1.12.4.min.js" type="text/javascript"></script>
-        <link href="js/jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
-        <title>Monster Hunter Armour Builder</title>
+        <link rel="stylesheet" href="css/themes/Monster-Hunting.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <title>Monster Hunter Armour Builder</title>
 
         <style>
             #weaponJewel_1, #weaponJewel_2, #weapons, #helmJewel_1, #helmJewel_2 {
@@ -16,7 +16,7 @@
             }
             table{
                 border: 1px solid black;
-                width: 90%;
+                width: 99%;
 
             }
             th{
@@ -31,6 +31,7 @@
             tr{
                 border: 1px solid black;
             }
+
             .first-cell{
                 width: 30%;
             }
@@ -63,7 +64,7 @@
                     <td colspan="5" class="first-cell">
                         <div id = "weaponCategory">
                         <label for="selectWeaponCat"></label>
-                        <select id = "selectWeaponCat">
+                        <select class="styled-select blue semi-square" id = "selectWeaponCat">
                             <option value="default">Select Weapon Category:</option>
                         </select>
                         </div>
