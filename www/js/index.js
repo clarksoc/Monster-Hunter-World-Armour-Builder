@@ -56,7 +56,7 @@ $(document).on("pagecreate", function () {
         2 : 'Longsword'
     };
     var greatswordObject = {
-        1 : ['equipment'][0]['greatswords'][0]['info'].name,  // todo
+        1 : ['equipment'][0]['greatswords'][0]['name'],  // todo
         2 : 'Greatsword II'
     };
     var longswordObject = {

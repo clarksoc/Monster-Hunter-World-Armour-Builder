@@ -3,84 +3,68 @@
     {
       "greatswords": [
         {
-          "info": {
-            "name": "Buster Sword I",
-            "damage": 384,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          }
+          "name": "Buster Sword I",
+          "damage": 384,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
         },
         {
-          "info": {
-            "name": "Buster Sword II",
-            "damage": 432,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          }
+          "name": "Buster Sword II",
+          "damage": 432,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
         },
         {
-          "info": {
-            "name": "Buster Sword III",
-            "damage": 480,
-            "element": "normal",
-            "eledamage": 0,
-            "affinity": 0,
-            "decoration": 0
-          }
+          "name": "Buster Sword III",
+          "damage": 480,
+          "element": "normal",
+          "eledamage": 0,
+          "affinity": 0,
+          "decoration": 0
         },
         {
-          "info": {
-            "name": "Flame Blade I",
-            "damage": 672,
-            "element": "fire",
-            "eledamage": 120,
-            "affinity": 10,
-            "decoration": 0
-          }
+          "name": "Flame Blade I",
+          "damage": 672,
+          "element": "fire",
+          "eledamage": 120,
+          "affinity": 10,
+          "decoration": 0
         },
         {
-          "info": {
-            "name": "Flame Blade I",
-            "damage": 720,
-            "element": "fire",
-            "eledamage": 150,
-            "affinity": 10,
-            "decoration": 0
-          }
+          "name": "Flame Blade I",
+          "damage": 720,
+          "element": "fire",
+          "eledamage": 150,
+          "affinity": 10,
+          "decoration": 0
         },
         {
-          "info": {
-            "name": "Red Wing",
-            "damage": 768,
-            "element": "fire",
-            "eledamage": 180,
-            "affinity": 15,
-            "decoration": 1
-          }
+          "name": "Red Wing",
+          "damage": 768,
+          "element": "fire",
+          "eledamage": 180,
+          "affinity": 15,
+          "decoration": 1
         },
         {
-          "info": {
-            "name": "Blue Wing",
-            "damage": 816,
-            "element": "fire",
-            "eledamage": 210,
-            "affinity": 15,
-            "decoration": 1
-          }
+          "name": "Blue Wing",
+          "damage": 816,
+          "element": "fire",
+          "eledamage": 210,
+          "affinity": 15,
+          "decoration": 1
         },
         {
-          "info": {
-            "name": "Rathalos Glinsword",
-            "damage": 912,
-            "element": "fire",
-            "eledamage": 240,
-            "affinity": 15,
-            "decoration": 1
-          }
+          "name": "Rathalos Glinsword",
+          "damage": 912,
+          "element": "fire",
+          "eledamage": 240,
+          "affinity": 15,
+          "decoration": 1
         }
       ],
       "longswords": [
