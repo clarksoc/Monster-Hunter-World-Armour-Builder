@@ -1,68 +1,94 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Accordion - Default functionality</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#accordion" ).accordion();
-        } );
-    </script>
+    <link rel="stylesheet" href="css/themes/Monster-Hunting.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Loadouts</title>
 </head>
+<style>
+    .ui-block-a {
+        padding-left: 10%;
+
+        width: 25% !important;
+    }
+    .ui-block-b {
+        padding-left: 10%;
+        width: 25% !important;
+    }
+    #buttonForm{
+         padding-top: 10%;
+     }
+    div{
+        padding-left: 2px;
+    }
+
+</style>
 <body>
 
-<div id="accordion">
-    <h3>Loadout 1</h3>
-    <div aria-orientation="horizontal">
-        <button>Rename</button>
-        <button>Edit loadout</button>
-        <p>loadout goes here</p>
-    </div>
-    <h3>Section 2</h3>
-    <div>
-        <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-        </p>
-    </div>
-    <h3>Section 3</h3>
-    <div>
-        <p>
-            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-        </p>
-        <ul>
-            <li>List item one</li>
-            <li>List item two</li>
-            <li>List item three</li>
-        </ul>
-    </div>
-    <h3>Section 4</h3>
-    <div>
-        <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-        </p>
-        <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-        </p>
-    </div>
-</div>
+<h1 style="text-align: center">Loadouts</h1>
 
+<div>
+    <div class="ui-grid-a">
+        <h3>Loadout 1</h3>
+        <div class="ui-block-a">
+            <button id="load_1">Load</button>
+        </div>
+        <div class="ui-block-b">
+            <button id="delete_1">Delete</button>
+        </div>
+
+    </div>
+    <div class="ui-grid-a">
+        <h3>Loadout 2</h3>
+        <div class="ui-block-a">
+            <button id="load_2">Load</button>
+        </div>
+        <div class="ui-block-b">
+            <button id="delete_2">Delete</button>
+        </div>
+
+    </div>
+    <div class="ui-grid-a">
+        <h3>Loadout 3</h3>
+        <div class="ui-block-a">
+            <button id="load_3">Load</button>
+        </div>
+        <div class="ui-block-b">
+            <button id="delete_3">Delete</button>
+        </div>
+
+    </div>
+    <div class="ui-grid-a">
+        <h3>Loadout 4</h3>
+        <div class="ui-block-a">
+            <button id="load_4">Load</button>
+        </div>
+        <div class="ui-block-b">
+            <button id="delete_4">Delete</button>
+        </div>
+
+    </div>
+    <div class="ui-grid-a">
+        <h3>Loadout 5</h3>
+        <div class="ui-block-a">
+            <button id="load_5">Load</button>
+        </div>
+        <div class="ui-block-b">
+            <button id="delete_5">Delete</button>
+        </div>
+
+    </div>
+
+    <form id="buttonForm" action="index.html">
+        <input type="submit" value="Go to Main Page">
+    </form>
+
+</div>
 
 </body>
 </html>

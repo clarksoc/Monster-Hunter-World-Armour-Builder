@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-        <link rel="stylesheet" href="css/themes/Monster-Hunting.min.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        <link rel="stylesheet" href="css/themes/Monster-Hunting.min.css" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -21,9 +21,6 @@
             }
             h1{
                 text-align: center;
-            }
-            th{
-
             }
             td{
                 border: 1px solid black;
@@ -46,6 +43,12 @@
             #total{
                 padding-top: 20px;
                 padding-bottom: 20px;
+            }
+            #buttonForm{
+                padding-top: 10%;
+            }
+            .ui-block-a {
+                width: 25% !important;
             }
         </style>
     </head>
@@ -322,8 +325,31 @@
                 </tbody>
             </table>
             </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <label for="selectLoadout"></label>
+                    <select id="selectLoadout">
+                        <option value="default">Select Loadout</option>
+                        <option value="1" id="loadOne">
+                            Loadout 1
+                        </option>
+                        <option value="1" id="loadTwo">
+                            Loadout 2
+                        </option>
+                        <option value="1" id="loadThree">
+                            Loadout 3
+                        </option>
+                        <option value="1" id="loadFour">
+                            Loadout 4
+                        </option>
+                        <option value="1" id="loadFive">
+                            Loadout 5
+                        </option>
+                    </select>
+                </div>
+            </div>
 
-                <form action="preset.html">
+                <form id="buttonForm" action="preset.html">
                 <input type="submit" value="Go to Preset">
             </form>
         </div>
