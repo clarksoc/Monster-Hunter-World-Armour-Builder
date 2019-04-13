@@ -1,4 +1,4 @@
-var app = {
+let app = {
     // Application Constructor
     initialize: function () {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -14,9 +14,9 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        let parentElement = document.getElementById(id);
+        let listeningElement = parentElement.querySelector('.listening');
+        let receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
@@ -30,115 +30,134 @@ app.initialize();
 $(document).on("pagecreate", function () {
 
 
-    var requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
-    var request = new XMLHttpRequest();
+    let requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
+    let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
 
     request.onload = function () {
-        var gear = request.response;
+        let gear = request.response;
 
-        var $selectWeapon = $('#selectWeapon');
-        var $weapons = $('#weapons');
-        var $selectWeaponCat = $('#selectWeaponCat');
-        var $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
-        var $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
-        var $weaponJewel_1 = $('#weaponJewel_1');
-        var $weaponJewel_2 = $('#weaponJewel_2');
+        let $selectWeapon = $('#selectWeapon');
+        let $weapons = $('#weapons');
+        let $selectWeaponCat = $('#selectWeaponCat');
+        let $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
+        let $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
+        let $weaponJewel_1 = $('#weaponJewel_1');
+        let $weaponJewel_2 = $('#weaponJewel_2');
 
-        var $rawDamage = $('#rawDamage');
-        var $eleName = $('#eleName');
-        var $eleDagame = $('#eleDamage');
-        var $affinity = $('#affinity');
+        let $rawDamage = $('#rawDamage');
+        let $eleName = $('#eleName');
+        let $eleDamage = $('#eleDamage');
+        let $affinity = $('#affinity');
 
-        var $selectHelm = $('#selectHelm');
-        var $selectHelmJewel_1 = $('#selectHelmJewel_1');
-        var $selectHelmJewel_2 = $('#selectHelmJewel_2');
-        var $helmSkill = $('#helmSkill');
-        var $helmDefense = $('#helmDefense');
-        var $helmFire = $('#helmFire');
-        var $helmWater = $('#helmWater');
-        var $helmThunder = $('#helmThunder');
-        var $helmIce = $('#helmIce');
-        var $helmDragon = $('#helmDragon');
+        let $selectHelm = $('#selectHelm');
+        let $selectHelmJewel_1 = $('#selectHelmJewel_1');
+        let $selectHelmJewel_2 = $('#selectHelmJewel_2');
+        let $helmSkill = $('#helmSkill');
+        let $helmDefense = $('#helmDefense');
+        let $helmFire = $('#helmFire');
+        let $helmWater = $('#helmWater');
+        let $helmThunder = $('#helmThunder');
+        let $helmIce = $('#helmIce');
+        let $helmDragon = $('#helmDragon');
 
-        var $selectChest = $('#selectChest');
-        var $chestSkill = $('#chestSkill');
-        var $chestDefense = $('#chestDefense');
-        var $chestFire = $('#chestFire');
-        var $chestWater = $('#chestWater');
-        var $chestThunder = $('#chestThunder');
-        var $chestIce = $('#chestIce');
-        var $chestDragon = $('#chestDragon');
+        let $selectChest = $('#selectChest');
+        let $chestSkill = $('#chestSkill');
+        let $chestDefense = $('#chestDefense');
+        let $chestFire = $('#chestFire');
+        let $chestWater = $('#chestWater');
+        let $chestThunder = $('#chestThunder');
+        let $chestIce = $('#chestIce');
+        let $chestDragon = $('#chestDragon');
 
-        var $selectArms = $('#selectArms');
-        var $armsSkill = $('#armsSkill');
-        var $armsDefense = $('#armsDefense');
-        var $armsFire = $('#armsFire');
-        var $armsWater = $('#armsWater');
-        var $armsThunder = $('#armsThunder');
-        var $armsIce = $('#armsIce');
-        var $armsDragon = $('#armsDragon');
+        let $selectArms = $('#selectArms');
+        let $armsSkill = $('#armsSkill');
+        let $armsDefense = $('#armsDefense');
+        let $armsFire = $('#armsFire');
+        let $armsWater = $('#armsWater');
+        let $armsThunder = $('#armsThunder');
+        let $armsIce = $('#armsIce');
+        let $armsDragon = $('#armsDragon');
 
-        var $selectWaist = $('#selectWaist');
-        var $waistSkill = $('#waistSkill');
-        var $waistDefense = $('#waistDefense');
-        var $waistFire = $('#waistFire');
-        var $waistWater = $('#waistWater');
-        var $waistThunder = $('#waistThunder');
-        var $waistIce = $('#waistIce');
-        var $waistDragon = $('#waistDragon');
+        let $selectWaist = $('#selectWaist');
+        let $waistSkill = $('#waistSkill');
+        let $waistDefense = $('#waistDefense');
+        let $waistFire = $('#waistFire');
+        let $waistWater = $('#waistWater');
+        let $waistThunder = $('#waistThunder');
+        let $waistIce = $('#waistIce');
+        let $waistDragon = $('#waistDragon');
 
-        var $selectLegs = $('#selectLegs');
-        var $legsSkill = $('#legsSkill');
-        var $legsDefense = $('#legsDefense');
-        var $legsFire = $('#legsFire');
-        var $legsWater = $('#legsWater');
-        var $legsThunder = $('#legsThunder');
-        var $legsIce = $('#legsIce');
-        var $legsDragon = $('#legsDragon');
+        let $selectLegs = $('#selectLegs');
+        let $legsSkill = $('#legsSkill');
+        let $legsDefense = $('#legsDefense');
+        let $legsFire = $('#legsFire');
+        let $legsWater = $('#legsWater');
+        let $legsThunder = $('#legsThunder');
+        let $legsIce = $('#legsIce');
+        let $legsDragon = $('#legsDragon');
 
-        var weaponCategoryObject = {
+        let $total = $('#total');
+        let $totalSkill = $('#totalSkill');
+        let $totalDefense = $('#totalDefense');
+        let $totalFire = $('#totalFire');
+        let $totalWater = $('#totalWater');
+        let $totalThunder = $('#totalThunder');
+        let $totalIce = $('#totalIce');
+        let $totalDragon = $('#totalDragon');
+
+        let weaponCategoryObject = {
             0: 'Greatsword',
             1: 'Longsword'
         };
 
-        var jewelObject = {
+        let jewelObject = {
             Attack1: 'Attack 1',
             Defence1: 'Defence 1'
         };
 
-        var selectWeaponCategory = $selectWeaponCat.get(0);
+        let selectWeaponCategory = $selectWeaponCat.get(0);
         for (index in weaponCategoryObject) {
             selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[index], index);
         }
-        var selectJewel_1 = $selectWeaponJewel_1.get(0);
+        let selectJewel_1 = $selectWeaponJewel_1.get(0);
         for (index in jewelObject) {
             selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[index], index);
         }
-        var selectJewel_2 = $selectWeaponJewel_2.get(0);
+        let selectJewel_2 = $selectWeaponJewel_2.get(0);
         for (index in jewelObject) {
             selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
         }
-        var selectWeapon = $selectWeapon.get(0);
+        let selectWeapon = $selectWeapon.get(0);
 
         $('select').on('change', function (event) {
-            event.preventDefault();
-            var i;
 
-            var weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
-            var weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
-            var weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
-            var weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
+            event.preventDefault();
+            let i;
+
+            let weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
+            let weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
+            let weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
+            let weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
 
 
             if (weaponCategoryValue === 'default') {
                 window.alert("Please Select a Weapon Cat");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
-                $eleDagame.text('0');
+                $eleDamage.text('0');
                 $affinity.text('0');
+                weaponJewel_1Value.value = "default";
+                weaponJewel_2Value.value = "default";
+                $weaponJewel_1.hide();
+                $weaponJewel_2.hide();
+                weaponValue.value = "default";
+                selectWeapon.selectedIndex = 0;
+                selectJewel_1.selectedIndex = 0;
+                selectJewel_2.selectedIndex = 0;
+                $weapons.hide();
 
                 for (i = selectWeapon.options.length - 1; i > 0; i--) {
                     selectWeapon.remove(i);
@@ -164,16 +183,24 @@ $(document).on("pagecreate", function () {
                 window.alert("Please Select a Weapon");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
-                $eleDagame.text('0');
+                $eleDamage.text('0');
                 $affinity.text('0');
+                selectJewel_1.selectedIndex = 0;
+                selectJewel_2.selectedIndex = 0;
+                weaponJewel_1Value.value = "default";
+                weaponJewel_2Value.value = "default";
+                $weaponJewel_1.hide();
+                $weaponJewel_2.hide();
             } else {
                 //window.alert(weaponValue); // gives value of long / great sword index
-                var DecorValue = gear['weapons'][weaponCategoryValue][weaponValue]['decoration'];
+                //window.alert(weaponCategoryValue);
+                let DecorValue = gear['weapons'][weaponCategoryValue][weaponValue]['decoration'];
                 window.alert(DecorValue);
                 if (DecorValue === 1) {
                     $weaponJewel_1.show();
                     weaponJewel_2Value.value = "default";
                     $weaponJewel_2.hide();
+                    selectJewel_2.selectedIndex = 0;
                     if (weaponJewel_1Value !== "default") {
                         // todo
                     }
@@ -187,18 +214,28 @@ $(document).on("pagecreate", function () {
                         // todo
                     }
                 } else {
+                    /*
+                    // todo
+                    this segment hides the jewel when selected, I don't think we need it
+
+                    selectJewel_1.selectedIndex = 0;
+                    selectJewel_2.selectedIndex = 0;
                     weaponJewel_1Value.value = "default";
                     weaponJewel_2Value.value = "default";
                     $weaponJewel_1.hide();
                     $weaponJewel_2.hide();
+                    */
                 }
 
                 $rawDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['damage']);
                 $eleName.text(gear['weapons'][weaponCategoryValue][weaponValue]['element']);
-                $eleDagame.text(gear['weapons'][weaponCategoryValue][weaponValue]['eledamage']);
+                $eleDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['eledamage']);
                 $affinity.text(gear['weapons'][weaponCategoryValue][weaponValue]['affinity']);
 
             }
+
         })
+
     };
+
 });
