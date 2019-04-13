@@ -112,70 +112,54 @@ $(document).on("pagecreate", function () {
         /* for (index in longswordObject) {
              weaponSelect.options[weaponSelect.options.length] = new Option(longswordObject[index], index);
          }*/
+
         var selectWeaponCategory = $selectWeaponCat.get(0);
         for (index in weaponCategoryObject) {
             selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[index], index);
         }
-        var selectJewel_1 = $selectWeaponJewel_1.get(0);
-        for (index in jewelObject) {
-            selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[index], index);
-        }
-        var selectJewel_2 = $selectWeaponJewel_2.get(0);
-        for (index in jewelObject) {
-            selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
-        }
-        var selectWeapon = $selectWeapon.get(0);
-        for (var i = 0; i < gear['equipment'][0]['greatswords'].length; i++) {
-            selectWeapon.options[selectWeapon.options.length] = new Option(gear['equipment'][0]['greatswords'][i]['name'], i);
-        }
-
 
         $('select').on('change', function (event) {
             event.preventDefault();
 
-            var curWep;
+
 
             var weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
-            //var weaponCategoryText = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].text;
+
+            var selectJewel_1 = $selectWeaponJewel_1.get(0);
+            for (index in jewelObject) {
+                selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[index], index);
+            }
+            var selectJewel_2 = $selectWeaponJewel_2.get(0);
+            for (index in jewelObject) {
+                selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
+            }
+            var selectWeapon = $selectWeapon.get(0);
+            for (var i = 0; i < gear['equipment'][weaponCategoryValue].length; i++) {
+                selectWeapon.options[selectWeapon.options.length] = new Option(gear['equipment'][weaponCategoryValue][i]['name'], i);
+            }
+
 
             var weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
-            //var weaponText = selectWeapon.options[selectWeapon.selectedIndex].text;
-
             var weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
-            //var weaponJewel_1Text = selectJewel_1.options[selectJewel_1.selectedIndex].text;
-
             var weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
-            //var weaponJewel_2Text = selectJewel_2.options[selectJewel_2.selectedIndex].text;
 
-            /*
-            if(weaponCategoryValue === '1') {
-                  for (index in greatswordObject) {
-                      selectWeapon.options[selectWeapon.options.length] = new Option(greatswordObject[index], index);
-                  }
-              }
-              else if(weaponCategoryValue === '2'){
-                  for (index in longswordObject) {
-                      selectWeapon.options[selectWeapon.options.length] = new Option(longswordObject[index], index);
-                  }
-              }
-              */
 
             if (weaponCategoryValue === 'default') {
                 window.alert("Please Select a Weapon");
+                $rawDamage.text('0');
+                $eleName.text('--None--');
+                $eleDagame.text('0');
+                $affinity.text('0');
             } else {
                 $weapons.show();
-                window.alert(curWep);
                 //window.alert(weaponCategoryValue); // gives value of equipment index
             }
 
             if (weaponValue === 'default') {
             } else {
                 //window.alert(weaponValue); // gives value of long / great sword index
-
-                //curWep = gear[]
-
-
-                var DecorValue = 0; // temp
+                var DecorValue = gear['equipment'][weaponCategoryValue][weaponValue]['decoration'];
+                window.alert(DecorValue);
                 if (DecorValue === 1) {
                     $weaponJewel_1.show();
                     weaponJewel_2Value.value = "default";
@@ -199,9 +183,12 @@ $(document).on("pagecreate", function () {
                     $weaponJewel_2.hide();
                 }
 
+                $rawDamage.text(gear['equipment'][weaponCategoryValue][weaponValue]['damage']);
+                $eleName.text(gear['equipment'][weaponCategoryValue][weaponValue]['element']);
+                $eleDagame.text(gear['equipment'][weaponCategoryValue][weaponValue]['eledamage']);
+                $affinity.text(gear['equipment'][weaponCategoryValue][weaponValue]['affinity']);
+
             }
-
         })
-
     };
 });
