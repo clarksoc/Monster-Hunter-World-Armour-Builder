@@ -1,0 +1,3 @@
+$(document).on("pagecreate", function () {
+
+});
