@@ -134,3 +134,159 @@
       ]
   ]
 }
+{
+{
+  "name": "Jagras Helm",
+  "Skill": "Speed Eating",
+  "defense": 8,
+  "fire": -2,
+  "water": 2,
+  "thunder": -1,
+  "ice": -1,
+  "dragon": 1,
+  "decoration": 0
+}
+{
+  "name": "Jagras Mail",
+  "Skill": "Intimidator",
+  "defense": 8,
+  "fire": -2,
+  "water": 2,
+  "thunder": -1,
+  "ice": -1,
+  "dragon": 1,
+  "decoration": 0
+}
+{
+  "name": "Jagras Vambraces",
+  "Skill": "Palico Rally",
+  "defense": 8,
+  "fire": -2,
+  "water": 2,
+  "thunder": -1,
+  "ice": -1,
+  "dragon": 1,
+  "decoration": 0
+}
+{
+  "name": "Jagras Coil",
+  "Skill": "Fortify",
+  "defense": 8,
+  "fire": -2,
+  "water": 2,
+  "thunder": -1,
+  "ice": -1,
+  "dragon": 1,
+  "decoration": 0
+}
+{
+  "name": "Jagras Greaves",
+  "Skill": "Speed Crawling",
+  "defense": 8,
+  "fire": -2,
+  "water": 2,
+  "thunder": -1,
+  "ice": -1,
+  "dragon": 1,
+  "decoration": 0
+}
+{
+  "name": "Kushala Glare α",
+  "Skill": "Ice Attack +2; Handicraft +2",
+  "defense": 64,
+  "fire": 0,
+  "water": 2,
+  "thunder": -3,
+  "ice": 4,
+  "dragon": -2,
+  "decoration": 0
+}
+{
+  "name": "Kushala Cista α",
+  "Skill": "Handicraft +2; Focus +1",
+  "defense": 64,
+  "fire": 0,
+  "water": 2,
+  "thunder": -3,
+  "ice": 4,
+  "dragon": -2,
+  "decoration": 0
+}
+{
+  "name": "Kushala Grip α",
+  "Skill": "Evade Window +2; Handicraft +1",
+  "defense": 64,
+  "fire": 0,
+  "water": 2,
+  "thunder": -3,
+  "ice": 4,
+  "dragon": -2,
+  "decoration": 0
+}
+{
+  "name": "Kushala Cocoon α",
+  "Skill": "Ice Attack +2; Evade Extender +1",
+  "defense": 64,
+  "fire": 0,
+  "water": 2,
+  "thunder": -3,
+  "ice": 4,
+  "dragon": -2,
+  "decoration": 0
+}
+{
+  "name": "Kushala Crus α",
+  "Skill": "Evade Extender +2; Handicraft +1",
+  "defense": 64,
+  "fire": 0,
+  "water": 2,
+  "thunder": -3,
+  "ice": 4,
+  "dragon": -2,
+  "decoration": 0
+}
+
+
+{
+  "name": "Attack Jewel 1",
+  "Skill": "Attack boost",
+  "attack": 3,
+  "decorationLevel": 1
+}
+{
+  "name": "Defense Jewel 1",
+  "Skill": "Defense boost",
+  "defense": 5,
+  "decorationLevel": 1
+}
+{
+  "name": "Medicine Jewel 1",
+  "Skill": "Recovery up",
+  "decorationLevel": 1
+}
+{
+  "name": "Expert Jewel 1",
+  "Skill": "Critical eye",
+  "decorationLevel": 1
+}
+{
+  "name": "Blast Jewel 1",
+  "Skill": "Blast Resistance",
+  "decorationLevel": 1
+}
+{
+  "name": "Botany Jewel 1",
+  "Skill": "Botanist",
+  "decorationLevel": 1
+}
+{
+  "name": "Crisis Jewel 1",
+  "Skill": "Resuscitate",
+  "decorationLevel": 1
+}
+{
+  "name": "Drain Jewel 1",
+  "Skill": "Stamina Thief",
+  "decorationLevel": 1
+}
+}
