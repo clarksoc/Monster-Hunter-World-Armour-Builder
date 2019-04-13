@@ -1,7 +1,6 @@
 {
   "equipment": [
-    {
-      "greatswords": [
+    [
         {
           "name": "Buster Sword I",
           "damage": 384,
@@ -67,7 +66,7 @@
           "decoration": 1
         }
       ],
-      "longswords": [
+      [
         {
           "name": "Bone Shotel I",
           "damage": 297,
@@ -133,6 +132,5 @@
           "decoration": 2
         }
       ]
-    }
   ]
 }
