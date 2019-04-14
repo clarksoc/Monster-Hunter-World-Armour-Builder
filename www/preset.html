@@ -12,15 +12,19 @@
 </head>
 <style>
     .ui-block-a-p {
-        position: absolute;
+        display: inline-block;
         right: 10%;
-
-        width: 15% !important;
+        width: 30% !important;
     }
     .ui-block-b-p {
-        position: absolute;
-        right: 35%;
-        width: 15% !important;
+        display: inline-block;
+        right: 10%;
+        width: 30% !important;
+    }
+    .ui-block-c-p {
+        display: inline-block;
+        right: 10%;
+        width: 30% !important;
     }
     #buttonForm{
          padding-top: 10%;
@@ -59,9 +63,18 @@
 
 <h1 style="text-align: center">Loadouts</h1>
 
-<div>
+    <div>
     <div class="ui-grid-a">
         <h3>Loadout 1</h3>
+        <div class="ui-block-a-p">
+            <button id="load_1">Load</button>
+        </div>
+        <div class="ui-block-c-p">
+            <button id="rename_1">Rename</button>
+        </div>
+        <div class="ui-block-b-p">
+            <button id="delete_1">Delete</button>
+        </div>
         <div class = "col-md-10 offset-md-1">
         <table>
             <thead>
@@ -69,7 +82,6 @@
                 <th colspan="6">Weapon</th>
                 <th colspan="6">Helmet</th>
                 <th colspan="6">Chest</th>
-                <th colspan="6">Arms</th>
                 <th colspan="6">Waist</th>
                 <th colspan="6">Legs</th>
 
@@ -97,17 +109,19 @@
             </tr>
         </table>
         </div>
-        <div class="ui-block-a-p">
-            <button id="load_1">Load</button>
-        </div>
-        <div class="ui-block-b-p">
-            <button id="delete_1">Delete</button>
-        </div>
-
     </div>
 
     <div class="ui-grid-a">
         <h3>Loadout 2</h3>
+        <div class="ui-block-a-p">
+            <button id="load_2">Load</button>
+        </div>
+        <div class="ui-block-c-p">
+            <button id="rename_2">Rename</button>
+        </div>
+        <div class="ui-block-b-p">
+            <button id="delete_2">Delete</button>
+        </div>
         <div class = "col-md-10 offset-md-1">
             <table>
                 <thead>
@@ -144,16 +158,20 @@
             </table>
         </div>
 
-        <div class="ui-block-a-p">
-            <button id="load_2">Load</button>
-        </div>
-        <div class="ui-block-b-p">
-            <button id="delete_2">Delete</button>
-        </div>
+
 
     </div>
     <div class="ui-grid-a">
         <h3>Loadout 3</h3>
+        <div class="ui-block-a-p">
+            <button id="load_3">Load</button>
+        </div>
+        <div class="ui-block-c-p">
+            <button id="rename_3">Rename</button>
+        </div>
+        <div class="ui-block-b-p">
+            <button id="delete_3">Delete</button>
+        </div>
         <div class = "col-md-10 offset-md-1">
             <table>
                 <thead>
@@ -190,17 +208,22 @@
             </table>
         </div>
 
-        <div class="ui-block-a-p">
-            <button id="load_3">Load</button>
-        </div>
-        <div class="ui-block-b-p">
-            <button id="delete_3">Delete</button>
-        </div>
+
 
     </div>
 
     <div class="ui-grid-a">
         <h3>Loadout 4</h3>
+        <div class="ui-block-a-p">
+            <button id="load_4">Load</button>
+        </div>
+        <div class="ui-block-c-p">
+            <button id="rename_4">Rename</button>
+        </div>
+        <div class="ui-block-b-p">
+            <button id="delete_4">Delete</button>
+        </div>
+
         <div class = "col-md-10 offset-md-1">
             <table>
                 <thead>
@@ -237,17 +260,21 @@
             </table>
         </div>
 
-        <div class="ui-block-a-p">
-            <button id="load_4">Load</button>
-        </div>
-        <div class="ui-block-b-p">
-            <button id="delete_4">Delete</button>
-        </div>
 
     </div>
 
     <div class="ui-grid-a">
         <h3>Loadout 5</h3>
+        <div class="ui-block-a-p">
+            <button id="load_5">Load</button>
+        </div>
+        <div class="ui-block-c-p">
+            <button id="rename_5">Rename</button>
+        </div>
+        <div class="ui-block-b-p">
+            <button id="delete_5">Delete</button>
+        </div>
+
         <div class = "col-md-10 offset-md-1">
             <table>
                 <thead>
@@ -284,12 +311,7 @@
             </table>
         </div>
 
-        <div class="ui-block-a-p">
-            <button id="load_5">Load</button>
-        </div>
-        <div class="ui-block-b-p">
-            <button id="delete_5">Delete</button>
-        </div>
+
 
     </div>
 
