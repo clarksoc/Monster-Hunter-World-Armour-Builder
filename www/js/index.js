@@ -174,7 +174,7 @@ $(document).on("pagecreate", function () {
                     selectWeapon.options[selectWeapon.options.length] = new Option(gear['weapons'][weaponCategoryValue][i]['name'], i);
                 }
 
-                selectWeapon.selectedIndex = weaponValue;
+                selectWeapon.selectedIndex = weaponValue + 1;
 
                 $weapons.show();
             }
@@ -192,7 +192,7 @@ $(document).on("pagecreate", function () {
                 $weaponJewel_1.hide();
                 $weaponJewel_2.hide();
             } else {
-                //window.alert(weaponValue); // gives value of long / great sword index
+                window.alert(weaponValue); // gives value of long / great sword index
                 //window.alert(weaponCategoryValue);
                 let DecorValue = gear['weapons'][weaponCategoryValue][weaponValue]['decoration'];
                 window.alert(DecorValue);
