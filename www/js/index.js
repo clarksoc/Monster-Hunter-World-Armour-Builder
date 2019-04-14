@@ -107,6 +107,57 @@ $(document).on("pagecreate", function () {
         let $totalIce = $('#totalIce');
         let $totalDragon = $('#totalDragon');
 
+        let $weaponOne = $('#weaponOne');
+        let $helmOne = $('#helmOne');
+        let $chestOne = $('#chestOne');
+        let $armsOne = $('#armsOne');
+        let $waistOne = $('#waistOne');
+        let $legsOne = $('#legsOne');
+
+        let $weaponTwo = $('#weaponTwo');
+        let $helmTwo = $('#helmTwo');
+        let $chestTwo = $('#chestTwo');
+        let $armsTwo = $('#armsTwo');
+        let $waistTwo = $('#waistTwo');
+        let $legsTwo = $('#legsTwo');
+
+        let $weaponThree = $('#weaponThree');
+        let $helmThree = $('#helmThree');
+        let $chestThree = $('#chestThree');
+        let $armsThree = $('#armsThree');
+        let $waistThree = $('#waistThree');
+        let $legsThree = $('#legsThree');
+
+        let $weaponFour = $('#weaponFour');
+        let $helmFour = $('#helmFour');
+        let $chestFour = $('#chestFour');
+        let $armsFour = $('#armsFour');
+        let $waistFour = $('#waistFour');
+        let $legsFour = $('#legsFour');
+
+        let $weaponFive = $('#weaponFive');
+        let $helmFive = $('#helmFive');
+        let $chestFive = $('#chestFive');
+        let $armsFive = $('#armsFive');
+        let $waistFive = $('#waistFive');
+        let $legsFive = $('#legsFive');
+
+        let $load_1 = $('#load_1');
+        let $delete_1 = $('#delete_1');
+
+        let $load_2 = $('#load_2');
+        let $delete_2 = $('#delete_2');
+
+        let $load_3 = $('#load_3');
+        let $delete_3 = $('#delete_3');
+
+        let $load_4 = $('#load_4');
+        let $delete_4 = $('#delete_4');
+
+        let $load_5 = $('#load_5');
+        let $delete_5 = $('#delete_5');
+
+
         let weaponCategoryObject = {
             0: 'Greatsword',
             1: 'Longsword'

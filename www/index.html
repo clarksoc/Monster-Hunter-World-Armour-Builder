@@ -31,7 +31,7 @@
             tr{
                 border: 1px solid black;
             }
-            .first-cell{
+            .first-cell, .first-cell-a{
                 width: 30%;
             }
             .next-cells-w{
@@ -46,6 +46,9 @@
             }
             #buttonForm{
                 padding-top: 10%;
+            }
+            #loadoutDiv{
+                padding-top: 1%;
             }
             .ui-block-a {
                 width: 25% !important;
@@ -73,7 +76,7 @@
                     <td colspan="5" class="first-cell">
                         <div id = "weaponCategory">
                         <label for="selectWeaponCat"></label>
-                        <select class="styled-select blue semi-square" id = "selectWeaponCat">
+                        <select id = "selectWeaponCat">
                             <option value="default">Select Weapon Category:</option>
                         </select>
                         </div>
@@ -130,23 +133,11 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td colspan="8" class="first-cell">
+                    <td colspan="8" class="first-cell-a">
                         <div id = "armourHelm">
                             <label for="selectHelm"></label>
                             <select id = "selectHelm">
                                 <option value="default">Select Helmet:</option>
-                            </select>
-                        </div>
-                        <div id = "helmJewel_1">
-                            <label for="selectHelmJewel_1"></label>
-                            <select id="selectHelmJewel_1">
-                                <option value="default">Select Jewel:</option>
-                            </select>
-                        </div>
-                        <div id = "helmJewel_2">
-                            <label for="selectHelmJewel_2"></label>
-                            <select id="selectHelmJewel_2">
-                                <option value="default">Select Jewel:</option>
                             </select>
                         </div>
                     </td>
@@ -173,11 +164,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8" class="next-cells-a">
+                    <td colspan="8">
                         <div id = "armourChest">
                             <label for="selectChest"></label>
                             <select id = "selectChest">
-                                <option value="default">Select Chest Piece:</option>
+                                <option value="default">Select Chest:</option>
                             </select>
                         </div>
                     </td>
@@ -204,7 +195,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8" class="next-cells-a">
+                    <td colspan="8">
                         <div id = "armourArms">
                             <label for="selectArms"></label>
                             <select id = "selectArms">
@@ -235,7 +226,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8" class="next-cells-a">
+                    <td colspan="8">
                         <div id = "armourWaist">
                             <label for="selectWaist"></label>
                             <select id = "selectWaist">
@@ -266,7 +257,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8" class="next-cells-a">
+                    <td colspan="8">
                         <div id = "armourLegs">
                             <label for="selectLegs"></label>
                             <select id = "selectLegs">
@@ -297,7 +288,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8" class="next-cells-a" id="total">
+                    <td colspan="8" id="total">
                         Totals:
                     </td>
                     <td colspan="8" class="next-cells-a" id="totalSkill">
@@ -325,7 +316,7 @@
                 </tbody>
             </table>
             </div>
-            <div class="ui-grid-a">
+            <div class="ui-grid-a" id="loadoutDiv">
                 <div class="ui-block-a">
                     <label for="selectLoadout"></label>
                     <select id="selectLoadout">
