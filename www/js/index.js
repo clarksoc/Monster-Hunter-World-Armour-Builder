@@ -38,23 +38,22 @@ $(document).on("pagecreate", function () {
 
     request.onload = function () {
         let gear = request.response;
+        let i;
 
         let $selectWeapon = $('#selectWeapon');
         let $weapons = $('#weapons');
         let $selectWeaponCat = $('#selectWeaponCat');
-        let $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
-        let $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
-        let $weaponJewel_1 = $('#weaponJewel_1');
-        let $weaponJewel_2 = $('#weaponJewel_2');
-
         let $rawDamage = $('#rawDamage');
         let $eleName = $('#eleName');
         let $eleDamage = $('#eleDamage');
         let $affinity = $('#affinity');
 
+        let $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
+        let $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
+        let $weaponJewel_1 = $('#weaponJewel_1');
+        let $weaponJewel_2 = $('#weaponJewel_2');
+
         let $selectHelm = $('#selectHelm');
-        let $selectHelmJewel_1 = $('#selectHelmJewel_1');
-        let $selectHelmJewel_2 = $('#selectHelmJewel_2');
         let $helmSkill = $('#helmSkill');
         let $helmDefense = $('#helmDefense');
         let $helmFire = $('#helmFire');
@@ -113,50 +112,77 @@ $(document).on("pagecreate", function () {
             1: 'Longsword'
         };
 
-        let jewelObject = {
-            Attack1: 'Attack 1',
-            Defence1: 'Defence 1'
-        };
-
         let selectWeaponCategory = $selectWeaponCat.get(0);
-        for (index in weaponCategoryObject) {
-            selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[index], index);
+        for (i in weaponCategoryObject) {
+            selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[i], i);
         }
+
+        /*
         let selectJewel_1 = $selectWeaponJewel_1.get(0);
-        for (index in jewelObject) {
-            selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[index], index);
+        for (i in jewelObject) {
+            selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[i], i);
         }
         let selectJewel_2 = $selectWeaponJewel_2.get(0);
-        for (index in jewelObject) {
-            selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[index], index);
+        for (i in jewelObject) {
+            selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[i], i);
         }
+        */
+
+        let helm = $selectHelm.get(0);
+        let chest = $selectChest.get(0);
+        let arms = $selectArms.get(0);
+        let waist = $selectWaist.get(0);
+        let legs = $selectLegs.get(0);
         let selectWeapon = $selectWeapon.get(0);
+
+        for (i = 0; i < gear['helm'].length; i++) {
+            helm.options[helm.options.length] = new Option(gear['helm'][i]['name'], i);
+        }
+        for (i = 0; i < gear['chest'].length; i++) {
+            chest.options[chest.options.length] = new Option(gear['chest'][i]['name'], i);
+        }
+        for (i = 0; i < gear['arms'].length; i++) {
+            arms.options[arms.options.length] = new Option(gear['arms'][i]['name'], i);
+        }
+        for (i = 0; i < gear['waist'].length; i++) {
+            waist.options[waist.options.length] = new Option(gear['waist'][i]['name'], i);
+        }
+        for (i = 0; i < gear['legs'].length; i++) {
+            legs.options[legs.options.length] = new Option(gear['legs'][i]['name'], i);
+        }
 
         $('select').on('change', function (event) {
 
+
             event.preventDefault();
-            let i;
 
             let weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
             let weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
-            let weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
-            let weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
+            //let weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
+            //let weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
+
+            let HelmValue = helm.options[helm.selectedIndex].value;
+            let ChestValue = chest.options[chest.selectedIndex].value;
+            let ArmsValue = arms.options[arms.selectedIndex].value;
+            let WaistValue = waist.options[waist.selectedIndex].value;
+            let LegsValue = legs.options[legs.selectedIndex].value;
+
 
 
             if (weaponCategoryValue === 'default') {
-                window.alert("Please Select a Weapon Cat");
+                //window.alert("Please Select a Weapon Cat");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
                 $eleDamage.text('0');
                 $affinity.text('0');
-                weaponJewel_1Value.value = "default";
-                weaponJewel_2Value.value = "default";
+               // weaponJewel_1Value.value = "default";
+               // weaponJewel_2Value.value = "default";
                 $weaponJewel_1.hide();
                 $weaponJewel_2.hide();
                 weaponValue.value = "default";
                 selectWeapon.selectedIndex = 0;
-                selectJewel_1.selectedIndex = 0;
-                selectJewel_2.selectedIndex = 0;
+               // selectJewel_1.selectedIndex = 0;
+               // selectJewel_2.selectedIndex = 0;
                 $weapons.hide();
 
                 for (i = selectWeapon.options.length - 1; i > 0; i--) {
@@ -180,40 +206,40 @@ $(document).on("pagecreate", function () {
             }
 
             if (weaponValue === 'default') {
-                window.alert("Please Select a Weapon");
+                //window.alert("Please Select a Weapon");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
                 $eleDamage.text('0');
                 $affinity.text('0');
-                selectJewel_1.selectedIndex = 0;
-                selectJewel_2.selectedIndex = 0;
-                weaponJewel_1Value.value = "default";
-                weaponJewel_2Value.value = "default";
+                // selectJewel_1.selectedIndex = 0;
+                // selectJewel_2.selectedIndex = 0;
+                // weaponJewel_1Value.value = "default";
+                // weaponJewel_2Value.value = "default";
                 $weaponJewel_1.hide();
                 $weaponJewel_2.hide();
             } else {
-                window.alert(weaponValue); // gives value of long / great sword index
+                //window.alert(weaponValue); // gives value of long / great sword index
                 //window.alert(weaponCategoryValue);
                 let DecorValue = gear['weapons'][weaponCategoryValue][weaponValue]['decoration'];
-                window.alert(DecorValue);
+                //window.alert(DecorValue);
                 if (DecorValue === 1) {
                     $weaponJewel_1.show();
-                    weaponJewel_2Value.value = "default";
+                    //weaponJewel_2Value.value = "default";
                     $weaponJewel_2.hide();
-                    selectJewel_2.selectedIndex = 0;
-                    if (weaponJewel_1Value !== "default") {
+                    //selectJewel_2.selectedIndex = 0;
+                    //if (weaponJewel_1Value !== "default") {
                         // todo
-                    }
+                    //}
                 } else if (DecorValue === 2) {
                     $weaponJewel_1.show();
                     $weaponJewel_2.show();
-                    if (weaponJewel_1Value !== "default") {
+                    //if (weaponJewel_1Value !== "default") {
+                        // todo
+                    //}
+                    //if (weaponJewel_2Value !== "default") {
                         // todo
                     }
-                    if (weaponJewel_2Value !== "default") {
-                        // todo
-                    }
-                } else {
+               // } else {
                     /*
                     // todo
                     this segment hides the jewel when selected, I don't think we need it
@@ -225,7 +251,7 @@ $(document).on("pagecreate", function () {
                     $weaponJewel_1.hide();
                     $weaponJewel_2.hide();
                     */
-                }
+               // }
 
                 $rawDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['damage']);
                 $eleName.text(gear['weapons'][weaponCategoryValue][weaponValue]['element']);
@@ -234,7 +260,7 @@ $(document).on("pagecreate", function () {
 
             }
 
-        })
+        });
 
     };
 
