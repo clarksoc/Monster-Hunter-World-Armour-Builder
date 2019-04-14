@@ -219,6 +219,7 @@ $(document).on("pagecreate", function () {
             legs.options[legs.options.length] = new Option(gear['legs'][i]['name'], i);
         }
 
+
         $('select').on('change', function (event) {
 
 
@@ -370,7 +371,6 @@ $(document).on("pagecreate", function () {
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
-               // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
 
@@ -449,13 +449,12 @@ $(document).on("pagecreate", function () {
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
-                // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Record Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -528,13 +527,12 @@ $(document).on("pagecreate", function () {
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
-                // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Record Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -607,13 +605,12 @@ $(document).on("pagecreate", function () {
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
-                // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Record Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -687,13 +684,12 @@ $(document).on("pagecreate", function () {
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
-                // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Record Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -749,6 +745,7 @@ $(document).on("pagecreate", function () {
                     console.log("Alert Dismissed!");
                 }
             });
+
 
 
 
