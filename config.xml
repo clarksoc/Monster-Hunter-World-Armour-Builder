@@ -29,5 +29,6 @@
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-shake" spec="^0.6.0" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="android" spec="^7.1.4" />
 </widget>

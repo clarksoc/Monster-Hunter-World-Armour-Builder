@@ -137,27 +137,6 @@ $(document).on("pagecreate", function () {
         let $waistFive = $('#waistFive');
         let $legsFive = $('#legsFive');
 
-        let $saveOne = $('#saveOne');
-        let $saveTwo = $('#saveTwo');
-        let $saveThree = $('#saveThree');
-        let $saveFour = $('#saveFour');
-        let $saveFive = $('#saveFive');
-
-        let $load_1 = $('#load_1');
-        let $delete_1 = $('#delete_1');
-
-        let $load_2 = $('#load_2');
-        let $delete_2 = $('#delete_2');
-
-        let $load_3 = $('#load_3');
-        let $delete_3 = $('#delete_3');
-
-        let $load_4 = $('#load_4');
-        let $delete_4 = $('#delete_4');
-
-        let $load_5 = $('#load_5');
-        let $delete_5 = $('#delete_5');
-
         let dbSupported = ("indexedDB" in window);
 
 
@@ -219,21 +198,459 @@ $(document).on("pagecreate", function () {
             legs.options[legs.options.length] = new Option(gear['legs'][i]['name'], i);
         }
 
+        let weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
+        let weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
+        let weaponIndex = selectWeapon.selectedIndex;
+
+        let HelmValue = helm.options[helm.selectedIndex].value;
+        let ChestValue = chest.options[chest.selectedIndex].value;
+        let ArmsValue = arms.options[arms.selectedIndex].value;
+        let WaistValue = waist.options[waist.selectedIndex].value;
+        let LegsValue = legs.options[legs.selectedIndex].value;
+
+        //Todo make the load buttons change the proper values patty-chan <3
+        $('#saveOne').click(function(event){
+            event.preventDefault();
+            navigator.vibrate(500);
+            let key = "1";
+            let weaponcat = weaponCategoryValue;
+            let weapon = weaponValue;
+            let helmet = HelmValue;
+            let chest = ChestValue;
+            let arms = ArmsValue;
+            let waist = WaistValue;
+            let legs = LegsValue;
+
+
+            let loadout={ weaponcat:weaponcat,
+                weapon:weapon, helmet:helmet,
+                chest:chest, arms:arms,
+                waist:waist, legs:legs, key:key};
+
+            let transaction = db.transaction(["loadout"],"readwrite");
+
+            let storeRequest = transaction.objectStore("loadout").put(loadout);
+            storeRequest.onsuccess =function() {
+                navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Loadout Saved", "Done");
+
+            };
+            storeRequest.onerror=function() {
+                navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+            };
+
+
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+
+
+        });
+
+        $('#loadOne').click(function (event) {
+            event.preventDefault();
+            let key = "1";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#deleteOne').click(function (event) {
+            event.preventDefault();
+            let key = "1";
+            let transaction = db.transaction(["loadout"],"readwrite");
+            let objectStore = transaction.objectStore("loadout");
+            objectStore.delete(key);
+            navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#saveTwo').click(function(event){
+            event.preventDefault();
+            navigator.vibrate([500, 500, 500]);
+            let key = "2";
+            let weaponcat = weaponCategoryValue;
+            let weapon = weaponValue;
+            let helmet = HelmValue;
+            let chest = ChestValue;
+            let arms = ArmsValue;
+            let waist = WaistValue;
+            let legs = LegsValue;
+
+
+            let loadout={ weaponcat:weaponcat,
+                weapon:weapon, helmet:helmet,
+                chest:chest, arms:arms,
+                waist:waist, legs:legs, key:key};
+
+            let transaction = db.transaction(["loadout"],"readwrite");
+
+            let storeRequest = transaction.objectStore("loadout").put(loadout);
+            storeRequest.onsuccess =function() {
+                navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Loadout Saved", "Done");
+
+            };
+            storeRequest.onerror=function() {
+                navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+            };
+
+
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+
+
+        });
+
+        $('#loadTwo').click(function (event) {
+            event.preventDefault();
+            let key = "2";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#deleteTwo').click(function (event) {
+            event.preventDefault();
+            let key = "2";
+            let transaction = db.transaction(["loadout"],"readwrite");
+            let objectStore = transaction.objectStore("loadout");
+            objectStore.delete(key);
+            navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#saveThree').click(function(event){
+            event.preventDefault();
+            navigator.vibrate([500, 500, 500, 500, 500]);
+            let key = "3";
+            let weaponcat = weaponCategoryValue;
+            let weapon = weaponValue;
+            let helmet = HelmValue;
+            let chest = ChestValue;
+            let arms = ArmsValue;
+            let waist = WaistValue;
+            let legs = LegsValue;
+
+
+            let loadout={ weaponcat:weaponcat,
+                weapon:weapon, helmet:helmet,
+                chest:chest, arms:arms,
+                waist:waist, legs:legs, key:key};
+
+            let transaction = db.transaction(["loadout"],"readwrite");
+
+            let storeRequest = transaction.objectStore("loadout").put(loadout);
+            storeRequest.onsuccess =function() {
+                navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Loadout Saved", "Done");
+
+            };
+            storeRequest.onerror=function() {
+                navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+            };
+
+
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+
+
+        });
+
+        $('#loadThree').click(function (event) {
+            event.preventDefault();
+            let key = "3";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#deleteThree').click(function (event) {
+            event.preventDefault();
+            let key = "3";
+            let transaction = db.transaction(["loadout"],"readwrite");
+            let objectStore = transaction.objectStore("loadout");
+            objectStore.delete(key);
+            navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#saveFour').click(function(event){
+            event.preventDefault();
+            navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
+            let key = "4";
+            let weaponcat = weaponCategoryValue;
+            let weapon = weaponValue;
+            let helmet = HelmValue;
+            let chest = ChestValue;
+            let arms = ArmsValue;
+            let waist = WaistValue;
+            let legs = LegsValue;
+
+
+            let loadout={ weaponcat:weaponcat,
+                weapon:weapon, helmet:helmet,
+                chest:chest, arms:arms,
+                waist:waist, legs:legs, key:key};
+
+            let transaction = db.transaction(["loadout"],"readwrite");
+
+            let storeRequest = transaction.objectStore("loadout").put(loadout);
+            storeRequest.onsuccess =function() {
+                navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Loadout Saved", "Done");
+
+            };
+            storeRequest.onerror=function() {
+                navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+            };
+
+
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+
+
+        });
+
+        $('#loadFour').click(function (event) {
+            event.preventDefault();
+            let key = "4";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#deleteFour').click(function (event) {
+            event.preventDefault();
+            let key = "4";
+            let transaction = db.transaction(["loadout"],"readwrite");
+            let objectStore = transaction.objectStore("loadout");
+            objectStore.delete(key);
+            navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+
+        $('#saveFive').click(function(event){
+            event.preventDefault();
+            navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
+            let key = "5";
+            let weaponcat = weaponCategoryValue;
+            let weapon = weaponValue;
+            let helmet = HelmValue;
+            let chest = ChestValue;
+            let arms = ArmsValue;
+            let waist = WaistValue;
+            let legs = LegsValue;
+
+
+            let loadout={ weaponcat:weaponcat,
+                weapon:weapon, helmet:helmet,
+                chest:chest, arms:arms,
+                waist:waist, legs:legs, key:key};
+
+            let transaction = db.transaction(["loadout"],"readwrite");
+
+            let storeRequest = transaction.objectStore("loadout").put(loadout);
+            storeRequest.onsuccess =function() {
+                navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
+
+            };
+            storeRequest.onerror=function() {
+                navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+            };
+
+
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+
+
+        });
+
+        $('#loadFive').click(function (event) {
+            event.preventDefault();
+            let key = "5";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#deleteFive').click(function (event) {
+            event.preventDefault();
+            let key = "5";
+            let transaction = db.transaction(["loadout"],"readwrite");
+            let objectStore = transaction.objectStore("loadout");
+            objectStore.delete(key);
+            navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
+        });
+
+        $('#buttonBrowser').click(openBrowser);
+        function openBrowser() {
+            let url = 'https://monsterhunterworld.wiki.fextralife.com/Monster+Hunter+World+Wiki';
+            let target = '_blank';
+            let options = "location = yes";
+            let ref = cordova.InAppBrowser.open(url, target, options);
+
+            ref.addEventListener('loadstart', loadstartCallback);
+            ref.addEventListener('loadstop', loadstopCallback);
+            ref.addEventListener('loaderror', loaderrorCallback);
+            ref.addEventListener('exit', exitCallback);
+
+            function loadstartCallback(event) {
+                console.log('Loading started: '  + event.url)
+            }
+
+            function loadstopCallback(event) {
+                console.log('Loading finished: ' + event.url)
+            }
+
+            function loaderrorCallback(error) {
+                console.log('Loading error: ' + error.message)
+            }
+
+            function exitCallback() {
+                console.log('Browser is closed...')
+            }
+        }
+
+
+
 
         $('select').on('change', function (event) {
 
 
             event.preventDefault();
 
-            let weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
-            let weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
-            let weaponIndex = selectWeapon.selectedIndex;
+            weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
+             weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
+             weaponIndex = selectWeapon.selectedIndex;
 
-            let HelmValue = helm.options[helm.selectedIndex].value;
-            let ChestValue = chest.options[chest.selectedIndex].value;
-            let ArmsValue = arms.options[arms.selectedIndex].value;
-            let WaistValue = waist.options[waist.selectedIndex].value;
-            let LegsValue = legs.options[legs.selectedIndex].value;
+             HelmValue = helm.options[helm.selectedIndex].value;
+             ChestValue = chest.options[chest.selectedIndex].value;
+             ArmsValue = arms.options[arms.selectedIndex].value;
+             WaistValue = waist.options[waist.selectedIndex].value;
+             LegsValue = legs.options[legs.selectedIndex].value;
 
             if (weaponCategoryValue === 'default') {
                 $rawDamage.text('0');
@@ -355,406 +772,12 @@ $(document).on("pagecreate", function () {
                 $legsIce.text(gear['legs'][LegsValue]['ice']);
                 $legsDragon.text(gear['legs'][LegsValue]['dragon']);
             }
-            $('#saveOne').click(function(event){
-                event.preventDefault();
-                navigator.vibrate(1000);
-                let key = "1";
-                let weaponcat = weaponCategoryValue;
-                let weapon = weaponValue;
-                let helmet = HelmValue;
-                let chest = ChestValue;
-                let arms = ArmsValue;
-                let waist = WaistValue;
-                let legs = LegsValue;
-
-
-                let loadout={ weaponcat:weaponcat,
-                    weapon:weapon, helmet:helmet,
-                    chest:chest, arms:arms,
-                    waist:waist, legs:legs, key:key};
-
-                let transaction = db.transaction(["loadout"],"readwrite");
-
-                let storeRequest = transaction.objectStore("loadout").put(loadout);
-                storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
-                };
-                storeRequest.onerror=function() {
-                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
-                };
-
-
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-
-
-            });
-
-            $('#loadOne').click(function (event) {
-                event.preventDefault();
-                let key = "1";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                       // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#deleteOne').click(function (event) {
-                event.preventDefault();
-                let key = "1";
-                let transaction = db.transaction(["loadout"],"readwrite");
-                let objectStore = transaction.objectStore("loadout");
-                objectStore.delete(key);
-                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#saveTwo').click(function(event){
-                event.preventDefault();
-                navigator.vibrate([1000, 1000, 1000]);
-                let key = "2";
-                let weaponcat = weaponCategoryValue;
-                let weapon = weaponValue;
-                let helmet = HelmValue;
-                let chest = ChestValue;
-                let arms = ArmsValue;
-                let waist = WaistValue;
-                let legs = LegsValue;
-
-
-                let loadout={ weaponcat:weaponcat,
-                    weapon:weapon, helmet:helmet,
-                    chest:chest, arms:arms,
-                    waist:waist, legs:legs, key:key};
-
-                let transaction = db.transaction(["loadout"],"readwrite");
-
-                let storeRequest = transaction.objectStore("loadout").put(loadout);
-                storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
-                };
-                storeRequest.onerror=function() {
-                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
-                };
-
-
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-
-
-            });
-
-            $('#loadTwo').click(function (event) {
-                event.preventDefault();
-                let key = "2";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                        // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#deleteTwo').click(function (event) {
-                event.preventDefault();
-                let key = "2";
-                let transaction = db.transaction(["loadout"],"readwrite");
-                let objectStore = transaction.objectStore("loadout");
-                objectStore.delete(key);
-                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#saveThree').click(function(event){
-                event.preventDefault();
-                navigator.vibrate([1000, 1000, 1000, 1000, 1000]);
-                let key = "3";
-                let weaponcat = weaponCategoryValue;
-                let weapon = weaponValue;
-                let helmet = HelmValue;
-                let chest = ChestValue;
-                let arms = ArmsValue;
-                let waist = WaistValue;
-                let legs = LegsValue;
-
-
-                let loadout={ weaponcat:weaponcat,
-                    weapon:weapon, helmet:helmet,
-                    chest:chest, arms:arms,
-                    waist:waist, legs:legs, key:key};
-
-                let transaction = db.transaction(["loadout"],"readwrite");
-
-                let storeRequest = transaction.objectStore("loadout").put(loadout);
-                storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
-                };
-                storeRequest.onerror=function() {
-                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
-                };
-
-
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-
-
-            });
-
-            $('#loadThree').click(function (event) {
-                event.preventDefault();
-                let key = "3";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                        // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#deleteThree').click(function (event) {
-                event.preventDefault();
-                let key = "3";
-                let transaction = db.transaction(["loadout"],"readwrite");
-                let objectStore = transaction.objectStore("loadout");
-                objectStore.delete(key);
-                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#saveFour').click(function(event){
-                event.preventDefault();
-                navigator.vibrate([1000, 1000, 1000, 1000, 1000, 1000, 1000]);
-                let key = "4";
-                let weaponcat = weaponCategoryValue;
-                let weapon = weaponValue;
-                let helmet = HelmValue;
-                let chest = ChestValue;
-                let arms = ArmsValue;
-                let waist = WaistValue;
-                let legs = LegsValue;
-
-
-                let loadout={ weaponcat:weaponcat,
-                    weapon:weapon, helmet:helmet,
-                    chest:chest, arms:arms,
-                    waist:waist, legs:legs, key:key};
-
-                let transaction = db.transaction(["loadout"],"readwrite");
-
-                let storeRequest = transaction.objectStore("loadout").put(loadout);
-                storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
-                };
-                storeRequest.onerror=function() {
-                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
-                };
-
-
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-
-
-            });
-
-            $('#loadFour').click(function (event) {
-                event.preventDefault();
-                let key = "4";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                        // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#deleteFour').click(function (event) {
-                event.preventDefault();
-                let key = "4";
-                let transaction = db.transaction(["loadout"],"readwrite");
-                let objectStore = transaction.objectStore("loadout");
-                objectStore.delete(key);
-                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-
-            $('#saveFive').click(function(event){
-                event.preventDefault();
-                navigator.vibrate([1000, 1000, 1000, 1000, 1000, 1000, 1000]);
-                let key = "5";
-                let weaponcat = weaponCategoryValue;
-                let weapon = weaponValue;
-                let helmet = HelmValue;
-                let chest = ChestValue;
-                let arms = ArmsValue;
-                let waist = WaistValue;
-                let legs = LegsValue;
-
-
-                let loadout={ weaponcat:weaponcat,
-                    weapon:weapon, helmet:helmet,
-                    chest:chest, arms:arms,
-                    waist:waist, legs:legs, key:key};
-
-                let transaction = db.transaction(["loadout"],"readwrite");
-
-                let storeRequest = transaction.objectStore("loadout").put(loadout);
-                storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
-                };
-                storeRequest.onerror=function() {
-                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
-                };
-
-
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-
-
-            });
-
-            $('#loadFive').click(function (event) {
-                event.preventDefault();
-                let key = "5";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                        // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-            $('#deleteFive').click(function (event) {
-                event.preventDefault();
-                let key = "5";
-                let transaction = db.transaction(["loadout"],"readwrite");
-                let objectStore = transaction.objectStore("loadout");
-                objectStore.delete(key);
-                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
-
-
 
         });
+
+
+
+
 
 
 
