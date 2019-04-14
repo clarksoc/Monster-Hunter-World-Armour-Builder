@@ -50,9 +50,15 @@
             #loadoutDiv{
                 padding-top: 1%;
             }
-            .ui-block-a {
-                width: 25% !important;
+            .ui-grid-a{
+                padding-top: 2%;
+
             }
+            .ui-block-a {
+                height: 30px;
+                width: 100% !important;
+            }
+
         </style>
     </head>
 
@@ -304,13 +310,31 @@
                 </tbody>
             </table>
             </div>
-
-            <button id="saveOne" type="button">Save Info</button>
-            <button id="saveTwo" type="button">Save Info</button>
-            <button id="saveThree" type="button">Save Info</button>
-            <button id="saveFour" type="button">Save Info</button>
-            <button id="saveFive" type="button">Save Info</button>
-
+            <div class="ui-grid-a">
+                <button class="ui-block-a" id="saveOne" type="button">Save to Loadout One</button>
+                <button class="ui-block-b" id="loadOne" type="button">Load Loadout One</button>
+                <button class="ui-block-c" id="deleteOne" type="button">Delete Loadout One</button>
+            </div>
+            <div class="ui-grid-a">
+                <button class="ui-block-a" id="saveTwo" type="button">Save to Loadout One</button>
+                <button class="ui-block-b" id="loadTwo" type="button">Load Loadout One</button>
+                <button class="ui-block-c" id="deleteTwo" type="button">Delete Loadout One</button>
+            </div>
+            <div class="ui-grid-a">
+                <button class="ui-block-a" id="saveThree" type="button">Save to Loadout One</button>
+                <button class="ui-block-b" id="loadThree" type="button">Load Loadout One</button>
+                <button class="ui-block-c" id="deleteThree" type="button">Delete Loadout One</button>
+            </div>
+            <div class="ui-grid-a">
+                <button class="ui-block-a" id="saveFour" type="button">Save to Loadout One</button>
+                <button class="ui-block-b" id="loadFour" type="button">Load Loadout One</button>
+                <button class="ui-block-c" id="deleteFour" type="button">Delete Loadout One</button>
+            </div>
+            <div class="ui-grid-a">
+                <button class="ui-block-a" id="saveFive" type="button">Save to Loadout One</button>
+                <button class="ui-block-b" id="loadFive" type="button">Load Loadout One</button>
+                <button class="ui-block-c" id="deleteFive" type="button">Delete Loadout One</button>
+            </div>
 
             <form id="buttonForm" action="preset.html">
                 <input type="submit" value="Go to Preset">

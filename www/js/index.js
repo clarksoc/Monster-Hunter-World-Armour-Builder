@@ -356,25 +356,28 @@ $(document).on("pagecreate", function () {
             }
             $('#saveOne').click(function(event){
                 event.preventDefault();
-                window.alert("ayo button was pressed");
                 let key = "1";
-                let weapon = weaponValue.value;
-                let helmet = HelmValue.value;
-                let chest = ChestValue.value;
-                let arms = ArmsValue.value;
-                let waist = WaistValue.value;
-                let legs = LegsValue.value;
+                let weaponcat = weaponCategoryValue;
+                let weapon = weaponValue;
+                let helmet = HelmValue;
+                let chest = ChestValue;
+                let arms = ArmsValue;
+                let waist = WaistValue;
+                let legs = LegsValue;
 
-                let loadoutOne={
+
+                let loadoutOne={ weaponcat:weaponcat,
                     weapon:weapon, helmet:helmet,
                     chest:chest, arms:arms,
                     waist:waist, legs:legs, key:key};
                // TODO check and see if indexeddb actually worked!
 
                 let transaction = db.transaction(["loadout"],"readwrite");
+
                 let storeRequest = transaction.objectStore("loadout").put(loadoutOne);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Record successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+
                 };
                 storeRequest.onerror=function() {
                     navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
@@ -387,6 +390,48 @@ $(document).on("pagecreate", function () {
 
 
             });
+
+            $('#loadOne').click(function (event) {
+                event.preventDefault();
+                let key = "1";
+                //window.alert("ayo button was pressed");
+                let storeRequest = db.transaction(["loadout"],"readwrite")
+                    .objectStore("loadout").get(key);
+                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+                storeRequest.onsuccess=function() {
+
+                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                       // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                            " Weapon Value: " + storeRequest.result.weapon +
+                            " Helmet Value :" + storeRequest.result.helmet +
+                            " Arms Value: " + storeRequest.result.arms +
+                            " Chest Value: " + storeRequest.result.chest +
+                            " Legs Value: " + storeRequest.result.legs +
+                            " Waist Value: " + storeRequest.result.waist) ;
+                    }
+                    else {
+                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                    }
+
+                };
+                function alertDismissed(){
+                    console.log("Alert Dismissed!");
+                }
+            });
+
+            $('#deleteOne').click(function (event) {
+                event.preventDefault();
+                let key = "1";
+                let transaction = db.transaction(["loadout"],"readwrite");
+                let objectStore = transaction.objectStore("loadout");
+                objectStore.delete(key);
+                navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+                function alertDismissed(){
+                    console.log("Alert Dismissed!");
+                }
+            })
 
 
 
