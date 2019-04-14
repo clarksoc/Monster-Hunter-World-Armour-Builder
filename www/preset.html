@@ -12,21 +12,48 @@
 </head>
 <style>
     .ui-block-a {
-        padding-left: 10%;
+        position: absolute;
+        right: 10%;
 
-        width: 25% !important;
+        width: 15% !important;
     }
     .ui-block-b {
-        padding-left: 10%;
-        width: 25% !important;
+        position: absolute;
+        right: 35%;
+        width: 15% !important;
     }
     #buttonForm{
          padding-top: 10%;
      }
+    h3{
+        padding-top: 25px;
+    }
     div{
         padding-left: 2px;
     }
+    table{
+        border: 1px solid black;
+        width: 99%;
 
+    }
+    td{
+        border: 1px solid black;
+        font-size: 1vm;
+        text-align: center;
+
+    }
+    tr{
+        border: 1px solid black;
+    }
+    .first-cell{
+        width: 30%;
+    }
+    .next-cells-w{
+        width: 15.75%;
+    }
+    .next-cells-a{
+        width: 9%;
+    }
 </style>
 <body>
 
@@ -35,6 +62,41 @@
 <div>
     <div class="ui-grid-a">
         <h3>Loadout 1</h3>
+        <div class = "col-md-10 offset-md-1">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="6">Weapon</th>
+                <th colspan="6">Helmet</th>
+                <th colspan="6">Chest</th>
+                <th colspan="6">Arms</th>
+                <th colspan="6">Waist</th>
+                <th colspan="6">Legs</th>
+
+            </tr>
+            </thead>
+            <tr>
+                <td colspan="6" class="next-cells-a" id="weaponOne">
+                    --None--
+                </td>
+                <td colspan="6" class="next-cells-a" id="helmOne">
+                    --None--
+                </td>
+                <td colspan="6" class="next-cells-a" id="chestOne">
+                    --None--
+                </td>
+                <td colspan="6" class="next-cells-a" id="armsOne">
+                    --None--
+                </td>
+                <td colspan="6" class="next-cells-a" id="waistOne">
+                    --None--
+                </td>
+                <td colspan="6" class="next-cells-a" id="legsOne">
+                    --None--
+                </td>
+            </tr>
+        </table>
+        </div>
         <div class="ui-block-a">
             <button id="load_1">Load</button>
         </div>
@@ -43,8 +105,45 @@
         </div>
 
     </div>
+
     <div class="ui-grid-a">
         <h3>Loadout 2</h3>
+        <div class = "col-md-10 offset-md-1">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="6">Weapon</th>
+                    <th colspan="6">Helmet</th>
+                    <th colspan="6">Chest</th>
+                    <th colspan="6">Arms</th>
+                    <th colspan="6">Waist</th>
+                    <th colspan="6">Legs</th>
+
+                </tr>
+                </thead>
+                <tr>
+                    <td colspan="6" class="next-cells-a" id="weaponTwo">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="helmTwo">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="chestTwo">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="armsTwo">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="waistTwo">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="legsTwo">
+                        --None--
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <div class="ui-block-a">
             <button id="load_2">Load</button>
         </div>
@@ -55,6 +154,42 @@
     </div>
     <div class="ui-grid-a">
         <h3>Loadout 3</h3>
+        <div class = "col-md-10 offset-md-1">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="6">Weapon</th>
+                    <th colspan="6">Helmet</th>
+                    <th colspan="6">Chest</th>
+                    <th colspan="6">Arms</th>
+                    <th colspan="6">Waist</th>
+                    <th colspan="6">Legs</th>
+
+                </tr>
+                </thead>
+                <tr>
+                    <td colspan="6" class="next-cells-a" id="weaponThree">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="helmThree">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="chestThree">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="armsThree">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="waistThree">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="legsThree">
+                        --None--
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <div class="ui-block-a">
             <button id="load_3">Load</button>
         </div>
@@ -63,8 +198,45 @@
         </div>
 
     </div>
+
     <div class="ui-grid-a">
         <h3>Loadout 4</h3>
+        <div class = "col-md-10 offset-md-1">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="6">Weapon</th>
+                    <th colspan="6">Helmet</th>
+                    <th colspan="6">Chest</th>
+                    <th colspan="6">Arms</th>
+                    <th colspan="6">Waist</th>
+                    <th colspan="6">Legs</th>
+
+                </tr>
+                </thead>
+                <tr>
+                    <td colspan="6" class="next-cells-a" id="weaponFour">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="helmFour">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="chestFour">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="armsFour">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="waistFour">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="legsFour">
+                        --None--
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <div class="ui-block-a">
             <button id="load_4">Load</button>
         </div>
@@ -73,8 +245,45 @@
         </div>
 
     </div>
+
     <div class="ui-grid-a">
         <h3>Loadout 5</h3>
+        <div class = "col-md-10 offset-md-1">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="6">Weapon</th>
+                    <th colspan="6">Helmet</th>
+                    <th colspan="6">Chest</th>
+                    <th colspan="6">Arms</th>
+                    <th colspan="6">Waist</th>
+                    <th colspan="6">Legs</th>
+
+                </tr>
+                </thead>
+                <tr>
+                    <td colspan="6" class="next-cells-a" id="weaponFive">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="helmFive">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="chestFive">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="armsFive">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="waistFive">
+                        --None--
+                    </td>
+                    <td colspan="6" class="next-cells-a" id="legsFive">
+                        --None--
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <div class="ui-block-a">
             <button id="load_5">Load</button>
         </div>
