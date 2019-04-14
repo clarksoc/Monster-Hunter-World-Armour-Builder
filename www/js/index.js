@@ -48,11 +48,6 @@ $(document).on("pagecreate", function () {
         let $eleDamage = $('#eleDamage');
         let $affinity = $('#affinity');
 
-        let $selectWeaponJewel_1 = $('#selectWeaponJewel_1');
-        let $selectWeaponJewel_2 = $('#selectWeaponJewel_2');
-        let $weaponJewel_1 = $('#weaponJewel_1');
-        let $weaponJewel_2 = $('#weaponJewel_2');
-
         let $selectHelm = $('#selectHelm');
         let $helmSkill = $('#helmSkill');
         let $helmDefense = $('#helmDefense');
@@ -168,17 +163,6 @@ $(document).on("pagecreate", function () {
             selectWeaponCategory.options[selectWeaponCategory.options.length] = new Option(weaponCategoryObject[i], i);
         }
 
-        /*
-        let selectJewel_1 = $selectWeaponJewel_1.get(0);
-        for (i in jewelObject) {
-            selectJewel_1.options[selectJewel_1.options.length] = new Option(jewelObject[i], i);
-        }
-        let selectJewel_2 = $selectWeaponJewel_2.get(0);
-        for (i in jewelObject) {
-            selectJewel_2.options[selectJewel_2.options.length] = new Option(jewelObject[i], i);
-        }
-        */
-
         let helm = $selectHelm.get(0);
         let chest = $selectChest.get(0);
         let arms = $selectArms.get(0);
@@ -209,8 +193,7 @@ $(document).on("pagecreate", function () {
 
             let weaponCategoryValue = selectWeaponCategory.options[selectWeaponCategory.selectedIndex].value;
             let weaponValue = selectWeapon.options[selectWeapon.selectedIndex].value;
-            //let weaponJewel_1Value = selectJewel_1.options[selectJewel_1.selectedIndex].value;
-            //let weaponJewel_2Value = selectJewel_2.options[selectJewel_2.selectedIndex].value;
+            let weaponIndex = selectWeapon.selectedIndex;
 
             let HelmValue = helm.options[helm.selectedIndex].value;
             let ChestValue = chest.options[chest.selectedIndex].value;
@@ -218,97 +201,39 @@ $(document).on("pagecreate", function () {
             let WaistValue = waist.options[waist.selectedIndex].value;
             let LegsValue = legs.options[legs.selectedIndex].value;
 
-
-
             if (weaponCategoryValue === 'default') {
-                //window.alert("Please Select a Weapon Cat");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
                 $eleDamage.text('0');
                 $affinity.text('0');
-               // weaponJewel_1Value.value = "default";
-               // weaponJewel_2Value.value = "default";
-                $weaponJewel_1.hide();
-                $weaponJewel_2.hide();
-                weaponValue.value = "default";
-                selectWeapon.selectedIndex = 0;
-               // selectJewel_1.selectedIndex = 0;
-               // selectJewel_2.selectedIndex = 0;
+                weaponValue.value = 'default';
                 $weapons.hide();
 
                 for (i = selectWeapon.options.length - 1; i > 0; i--) {
                     selectWeapon.remove(i);
                 }
-
-
             } else {
-
                 for (i = selectWeapon.options.length - 1; i > 0; i--) {
                     selectWeapon.remove(i);
                 }
-
                 for (i = 0; i < gear['weapons'][weaponCategoryValue].length; i++) {
                     selectWeapon.options[selectWeapon.options.length] = new Option(gear['weapons'][weaponCategoryValue][i]['name'], i);
                 }
-
-                selectWeapon.selectedIndex = weaponValue + 1;
-
+                selectWeapon.selectedIndex = weaponIndex;
                 $weapons.show();
             }
 
             if (weaponValue === 'default') {
-                //window.alert("Please Select a Weapon");
                 $rawDamage.text('0');
                 $eleName.text('--None--');
                 $eleDamage.text('0');
                 $affinity.text('0');
-                // selectJewel_1.selectedIndex = 0;
-                // selectJewel_2.selectedIndex = 0;
-                // weaponJewel_1Value.value = "default";
-                // weaponJewel_2Value.value = "default";
-                $weaponJewel_1.hide();
-                $weaponJewel_2.hide();
             } else {
-                //window.alert(weaponValue); // gives value of long / great sword index
-                //window.alert(weaponCategoryValue);
-                let DecorValue = gear['weapons'][weaponCategoryValue][weaponValue]['decoration'];
-                //window.alert(DecorValue);
-                if (DecorValue === 1) {
-                    $weaponJewel_1.show();
-                    //weaponJewel_2Value.value = "default";
-                    $weaponJewel_2.hide();
-                    //selectJewel_2.selectedIndex = 0;
-                    //if (weaponJewel_1Value !== "default") {
-                        // todo
-                    //}
-                } else if (DecorValue === 2) {
-                    $weaponJewel_1.show();
-                    $weaponJewel_2.show();
-                    //if (weaponJewel_1Value !== "default") {
-                        // todo
-                    //}
-                    //if (weaponJewel_2Value !== "default") {
-                        // todo
-                    }
-               // } else {
-                    /*
-                    // todo
-                    this segment hides the jewel when selected, I don't think we need it
-
-                    selectJewel_1.selectedIndex = 0;
-                    selectJewel_2.selectedIndex = 0;
-                    weaponJewel_1Value.value = "default";
-                    weaponJewel_2Value.value = "default";
-                    $weaponJewel_1.hide();
-                    $weaponJewel_2.hide();
-                    */
-               // }
 
                 $rawDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['damage']);
                 $eleName.text(gear['weapons'][weaponCategoryValue][weaponValue]['element']);
                 $eleDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['eledamage']);
                 $affinity.text(gear['weapons'][weaponCategoryValue][weaponValue]['affinity']);
-
             }
 
             if (HelmValue === 'default') {
@@ -319,7 +244,7 @@ $(document).on("pagecreate", function () {
                 $helmThunder.text('0');
                 $helmIce.text('0');
                 $helmDragon.text('0');
-            }else{
+            } else {
                 $helmSkill.text(gear['helm'][HelmValue]['Skill']);
                 $helmDefense.text(gear['helm'][HelmValue]['defense']);
                 $helmFire.text(gear['helm'][HelmValue]['fire']);
@@ -336,7 +261,7 @@ $(document).on("pagecreate", function () {
                 $chestThunder.text('0');
                 $chestIce.text('0');
                 $chestDragon.text('0');
-            }else{
+            } else {
                 $chestSkill.text(gear['chest'][ChestValue]['Skill']);
                 $chestDefense.text(gear['chest'][ChestValue]['defense']);
                 $chestFire.text(gear['chest'][ChestValue]['fire']);
@@ -353,7 +278,7 @@ $(document).on("pagecreate", function () {
                 $armsThunder.text('0');
                 $armsIce.text('0');
                 $armsDragon.text('0');
-            }else{
+            } else {
                 $armsSkill.text(gear['arms'][ArmsValue]['Skill']);
                 $armsDefense.text(gear['arms'][ArmsValue]['defense']);
                 $armsFire.text(gear['arms'][ArmsValue]['fire']);
@@ -370,7 +295,7 @@ $(document).on("pagecreate", function () {
                 $waistThunder.text('0');
                 $waistIce.text('0');
                 $waistDragon.text('0');
-            }else{
+            } else {
                 $waistSkill.text(gear['waist'][WaistValue]['Skill']);
                 $waistDefense.text(gear['waist'][WaistValue]['defense']);
                 $waistFire.text(gear['waist'][WaistValue]['fire']);
@@ -387,7 +312,7 @@ $(document).on("pagecreate", function () {
                 $legsThunder.text('0');
                 $legsIce.text('0');
                 $legsDragon.text('0');
-            }else{
+            } else {
                 $legsSkill.text(gear['legs'][LegsValue]['Skill']);
                 $legsDefense.text(gear['legs'][LegsValue]['defense']);
                 $legsFire.text(gear['legs'][LegsValue]['fire']);
