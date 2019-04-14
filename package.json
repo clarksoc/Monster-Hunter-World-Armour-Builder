@@ -12,6 +12,7 @@
     "dependencies": {
         "cordova-android": "^7.1.4",
         "cordova-plugin-device-motion": "^2.0.1",
+        "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-listpicker": "^2.2.2",
         "cordova-plugin-screen-orientation": "^3.0.1",
         "cordova-plugin-shake": "^0.6.0",
@@ -23,7 +24,8 @@
             "cordova-plugin-listpicker": {},
             "cordova-plugin-whitelist": {},
             "cordova-plugin-shake": {},
-            "cordova-plugin-screen-orientation": {}
+            "cordova-plugin-screen-orientation": {},
+            "cordova-plugin-dialogs": {}
         },
         "platforms": [
             "android"

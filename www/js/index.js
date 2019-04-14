@@ -137,6 +137,12 @@ $(document).on("pagecreate", function () {
         let $waistFive = $('#waistFive');
         let $legsFive = $('#legsFive');
 
+        let $saveOne = $('#saveOne');
+        let $saveTwo = $('#saveTwo');
+        let $saveThree = $('#saveThree');
+        let $saveFour = $('#saveFour');
+        let $saveFive = $('#saveFive');
+
         let $load_1 = $('#load_1');
         let $delete_1 = $('#delete_1');
 
@@ -151,6 +157,33 @@ $(document).on("pagecreate", function () {
 
         let $load_5 = $('#load_5');
         let $delete_5 = $('#delete_5');
+
+        let dbSupported = ("indexedDB" in window);
+
+
+        if (dbSupported) {
+            let openRequest = window.indexedDB.open("loadoutDB", 1);
+
+            openRequest.onupgradeneeded = function (event) {
+                console.log("DB upgrading");
+                db = openRequest.result;
+                if (!db.objectStoreNames.contains("loadout")) {
+
+                    db.createObjectStore("loadout", {keyPath: "key"});
+                }
+
+            };
+            openRequest.onsuccess = function (event) {
+                console.log("DB success");
+                db = openRequest.result;
+            };
+
+            openRequest.onerror = function (event) {
+                console.log("DB error");
+                console.dir(event);
+            };
+
+        }
 
 
         let weaponCategoryObject = {
@@ -321,8 +354,45 @@ $(document).on("pagecreate", function () {
                 $legsIce.text(gear['legs'][LegsValue]['ice']);
                 $legsDragon.text(gear['legs'][LegsValue]['dragon']);
             }
+            $('#saveOne').click(function(event){
+                event.preventDefault();
+                window.alert("ayo button was pressed");
+                let key = "1";
+                let weapon = weaponValue.value;
+                let helmet = HelmValue.value;
+                let chest = ChestValue.value;
+                let arms = ArmsValue.value;
+                let waist = WaistValue.value;
+                let legs = LegsValue.value;
 
-        });
+                let loadoutOne={
+                    weapon:weapon, helmet:helmet,
+                    chest:chest, arms:arms,
+                    waist:waist, legs:legs, key:key};
+               // TODO check and see if indexeddb actually worked!
+
+                let transaction = db.transaction(["loadout"],"readwrite");
+                let storeRequest = transaction.objectStore("loadout").put(loadoutOne);
+                storeRequest.onsuccess =function() {
+                    navigator.notification.alert("Record successfully saved!", alertDismissed, "Record Saved", "Done");
+                };
+                storeRequest.onerror=function() {
+                    navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
+                };
+
+
+                function alertDismissed(){
+                    console.log("Alert Dismissed!");
+                }
+
+
+            });
+
+
+
+
+            });
+
 
     };
 
