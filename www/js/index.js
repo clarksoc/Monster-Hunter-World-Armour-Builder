@@ -260,6 +260,92 @@ $(document).on("pagecreate", function () {
 
             }
 
+            if (HelmValue === 'default') {
+                $helmSkill.text('--None--');
+                $helmDefense.text('0');
+                $helmFire.text('0');
+                $helmWater.text('0');
+                $helmThunder.text('0');
+                $helmIce.text('0');
+                $helmDragon.text('0');
+            }else{
+                $helmSkill.text(gear['helm'][HelmValue]['Skill']);
+                $helmDefense.text(gear['helm'][HelmValue]['defense']);
+                $helmFire.text(gear['helm'][HelmValue]['fire']);
+                $helmWater.text(gear['helm'][HelmValue]['water']);
+                $helmThunder.text(gear['helm'][HelmValue]['thunder']);
+                $helmIce.text(gear['helm'][HelmValue]['ice']);
+                $helmDragon.text(gear['helm'][HelmValue]['dragon']);
+            }
+            if (ChestValue === 'default') {
+                $chestSkill.text('--None--');
+                $chestDefense.text('0');
+                $chestFire.text('0');
+                $chestWater.text('0');
+                $chestThunder.text('0');
+                $chestIce.text('0');
+                $chestDragon.text('0');
+            }else{
+                $chestSkill.text(gear['chest'][ChestValue]['Skill']);
+                $chestDefense.text(gear['chest'][ChestValue]['defense']);
+                $chestFire.text(gear['chest'][ChestValue]['fire']);
+                $chestWater.text(gear['chest'][ChestValue]['water']);
+                $chestThunder.text(gear['chest'][ChestValue]['thunder']);
+                $chestIce.text(gear['chest'][ChestValue]['ice']);
+                $chestDragon.text(gear['chest'][ChestValue]['dragon']);
+            }
+            if (ArmsValue === 'default') {
+                $armsSkill.text('--None--');
+                $armsDefense.text('0');
+                $armsFire.text('0');
+                $armsWater.text('0');
+                $armsThunder.text('0');
+                $armsIce.text('0');
+                $armsDragon.text('0');
+            }else{
+                $armsSkill.text(gear['arms'][ArmsValue]['Skill']);
+                $armsDefense.text(gear['arms'][ArmsValue]['defense']);
+                $armsFire.text(gear['arms'][ArmsValue]['fire']);
+                $armsWater.text(gear['arms'][ArmsValue]['water']);
+                $armsThunder.text(gear['arms'][ArmsValue]['thunder']);
+                $armsIce.text(gear['arms'][ArmsValue]['ice']);
+                $armsDragon.text(gear['arms'][ArmsValue]['dragon']);
+            }
+            if (WaistValue === 'default') {
+                $waistSkill.text('--None--');
+                $waistDefense.text('0');
+                $waistFire.text('0');
+                $waistWater.text('0');
+                $waistThunder.text('0');
+                $waistIce.text('0');
+                $waistDragon.text('0');
+            }else{
+                $waistSkill.text(gear['waist'][WaistValue]['Skill']);
+                $waistDefense.text(gear['waist'][WaistValue]['defense']);
+                $waistFire.text(gear['waist'][WaistValue]['fire']);
+                $waistWater.text(gear['waist'][WaistValue]['water']);
+                $waistThunder.text(gear['waist'][WaistValue]['thunder']);
+                $waistIce.text(gear['waist'][WaistValue]['ice']);
+                $waistDragon.text(gear['waist'][WaistValue]['dragon']);
+            }
+            if (LegsValue === 'default') {
+                $legsSkill.text('--None--');
+                $legsDefense.text('0');
+                $legsFire.text('0');
+                $legsWater.text('0');
+                $legsThunder.text('0');
+                $legsIce.text('0');
+                $legsDragon.text('0');
+            }else{
+                $legsSkill.text(gear['legs'][LegsValue]['Skill']);
+                $legsDefense.text(gear['legs'][LegsValue]['defense']);
+                $legsFire.text(gear['legs'][LegsValue]['fire']);
+                $legsWater.text(gear['legs'][LegsValue]['water']);
+                $legsThunder.text(gear['legs'][LegsValue]['thunder']);
+                $legsIce.text(gear['legs'][LegsValue]['ice']);
+                $legsDragon.text(gear['legs'][LegsValue]['dragon']);
+            }
+
         });
 
     };
