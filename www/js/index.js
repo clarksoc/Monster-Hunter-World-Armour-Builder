@@ -357,6 +357,7 @@ $(document).on("pagecreate", function () {
             }
             $('#saveOne').click(function(event){
                 event.preventDefault();
+                navigator.vibrate(1000);
                 let key = "1";
                 let weaponcat = weaponCategoryValue;
                 let weapon = weaponValue;
@@ -376,7 +377,7 @@ $(document).on("pagecreate", function () {
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -435,6 +436,7 @@ $(document).on("pagecreate", function () {
 
             $('#saveTwo').click(function(event){
                 event.preventDefault();
+                navigator.vibrate([1000, 1000, 1000]);
                 let key = "2";
                 let weaponcat = weaponCategoryValue;
                 let weapon = weaponValue;
@@ -454,7 +456,7 @@ $(document).on("pagecreate", function () {
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -513,6 +515,7 @@ $(document).on("pagecreate", function () {
 
             $('#saveThree').click(function(event){
                 event.preventDefault();
+                navigator.vibrate([1000, 1000, 1000, 1000, 1000]);
                 let key = "3";
                 let weaponcat = weaponCategoryValue;
                 let weapon = weaponValue;
@@ -532,7 +535,7 @@ $(document).on("pagecreate", function () {
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -591,6 +594,7 @@ $(document).on("pagecreate", function () {
 
             $('#saveFour').click(function(event){
                 event.preventDefault();
+                navigator.vibrate([1000, 1000, 1000, 1000, 1000, 1000, 1000]);
                 let key = "4";
                 let weaponcat = weaponCategoryValue;
                 let weapon = weaponValue;
@@ -610,7 +614,7 @@ $(document).on("pagecreate", function () {
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
@@ -670,6 +674,7 @@ $(document).on("pagecreate", function () {
 
             $('#saveFive').click(function(event){
                 event.preventDefault();
+                navigator.vibrate([1000, 1000, 1000, 1000, 1000, 1000, 1000]);
                 let key = "5";
                 let weaponcat = weaponCategoryValue;
                 let weapon = weaponValue;
@@ -689,7 +694,7 @@ $(document).on("pagecreate", function () {
 
                 let storeRequest = transaction.objectStore("loadout").put(loadout);
                 storeRequest.onsuccess =function() {
-                    navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Record Saved", "Done");
+                    navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
                 };
                 storeRequest.onerror=function() {
