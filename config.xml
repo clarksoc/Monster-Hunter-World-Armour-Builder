@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0">
-    <name>HelloCordova</name>
+    <name>Monster Hunter World Loadout Builder</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        An App that allows all Monster Hunter fans to create and save their favourite loadouts!
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author>
+        Connor Clarkson, Patrick Ouellette, and Bryan Kevin Marquez
     </author>
+    <icon src="www/img/xeno_1200x1200.png" />
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
@@ -19,7 +20,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
+    <platform name="android">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
@@ -27,7 +28,6 @@
     <plugin name="cordova-plugin-listpicker" spec="^2.2.2" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
-    <plugin name="cordova-plugin-shake" spec="^0.6.0" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="android" spec="^7.1.4" />

@@ -15,14 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-shake": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-shake@^0.6.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-device-motion": {
     "source": {
       "type": "registry",

@@ -208,6 +208,7 @@ $(document).on("pagecreate", function () {
         let WaistValue = waist.options[waist.selectedIndex].value;
         let LegsValue = legs.options[legs.selectedIndex].value;
 
+
         //Todo make the load buttons change the proper values patty-chan <3
         $('#saveOne').click(function(event){
             event.preventDefault();
@@ -227,18 +228,19 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
-            $weaponOne.text(gear['weapons'][weaponcat][weaponValue]['name']);
-            $helmOne.text(gear['helm'][helmet]['name']);
-            $chestOne.text(gear['chest'][chest]['name']);
-            $armsOne.text(gear['arms'][arms]['name']);
-            $waistOne.text(gear['waist'][waist]['name']);
-            $legsOne.text(gear['legs'][legs]['name']);
+
 
             let transaction = db.transaction(["loadout"],"readwrite");
 
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Loadout Saved", "Done");
+                $weaponOne.text(gear['weapons'][weaponcat][weaponValue]['name']);
+                $helmOne.text(gear['helm'][helmet]['name']);
+                $chestOne.text(gear['chest'][chest]['name']);
+                $armsOne.text(gear['arms'][arms]['name']);
+                $waistOne.text(gear['waist'][waist]['name']);
+                $legsOne.text(gear['legs'][legs]['name']);
 
             };
             storeRequest.onerror=function() {
@@ -298,6 +300,12 @@ $(document).on("pagecreate", function () {
             let objectStore = transaction.objectStore("loadout");
             objectStore.delete(key);
             navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            $weaponOne.text('--None--');
+            $helmOne.text('--None--');
+            $chestOne.text('--None--');
+            $armsOne.text('--None--');
+            $waistOne.text('--None--');
+            $legsOne.text('--None--');
             function alertDismissed(){
                 console.log("Alert Dismissed!");
             }
@@ -321,12 +329,6 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
-            $weaponTwo.text(gear['weapons'][weaponcat][weaponValue]['name']);
-            $helmTwo.text(gear['helm'][helmet]['name']);
-            $chestTwo.text(gear['chest'][chest]['name']);
-            $armsTwo.text(gear['arms'][arms]['name']);
-            $waistTwo.text(gear['waist'][waist]['name']);
-            $legsTwo.text(gear['legs'][legs]['name']);
 
             let transaction = db.transaction(["loadout"],"readwrite");
 
@@ -334,6 +336,12 @@ $(document).on("pagecreate", function () {
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
+                $weaponTwo.text(gear['weapons'][weaponcat][weaponValue]['name']);
+                $helmTwo.text(gear['helm'][helmet]['name']);
+                $chestTwo.text(gear['chest'][chest]['name']);
+                $armsTwo.text(gear['arms'][arms]['name']);
+                $waistTwo.text(gear['waist'][waist]['name']);
+                $legsTwo.text(gear['legs'][legs]['name']);
             };
             storeRequest.onerror=function() {
                 navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
@@ -392,6 +400,12 @@ $(document).on("pagecreate", function () {
             let objectStore = transaction.objectStore("loadout");
             objectStore.delete(key);
             navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            $weaponTwo.text('--None--');
+            $helmTwo.text('--None--');
+            $chestTwo.text('--None--');
+            $armsTwo.text('--None--');
+            $waistTwo.text('--None--');
+            $legsTwo.text('--None--');
             function alertDismissed(){
                 console.log("Alert Dismissed!");
             }
@@ -409,12 +423,6 @@ $(document).on("pagecreate", function () {
             let waist = WaistValue;
             let legs = LegsValue;
 
-            $weaponThree.text(gear['weapons'][weaponcat][weaponValue]['name']);
-            $helmThree.text(gear['helm'][helmet]['name']);
-            $chestThree.text(gear['chest'][chest]['name']);
-            $armsThree.text(gear['arms'][arms]['name']);
-            $waistThree.text(gear['waist'][waist]['name']);
-            $legsThree.text(gear['legs'][legs]['name']);
 
 
             let loadout={ weaponcat:weaponcat,
@@ -428,6 +436,12 @@ $(document).on("pagecreate", function () {
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
+                $weaponThree.text(gear['weapons'][weaponcat][weaponValue]['name']);
+                $helmThree.text(gear['helm'][helmet]['name']);
+                $chestThree.text(gear['chest'][chest]['name']);
+                $armsThree.text(gear['arms'][arms]['name']);
+                $waistThree.text(gear['waist'][waist]['name']);
+                $legsThree.text(gear['legs'][legs]['name']);
             };
             storeRequest.onerror=function() {
                 navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
@@ -485,6 +499,12 @@ $(document).on("pagecreate", function () {
             let objectStore = transaction.objectStore("loadout");
             objectStore.delete(key);
             navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            $weaponThree.text('--None--');
+            $helmThree.text('--None--');
+            $chestThree.text('--None--');
+            $armsThree.text('--None--');
+            $waistThree.text('--None--');
+            $legsThree.text('--None--');
             function alertDismissed(){
                 console.log("Alert Dismissed!");
             }
@@ -508,12 +528,6 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
-            $weaponFour.text(gear['weapons'][weaponcat][weaponValue]['name']);
-            $helmFour.text(gear['helm'][helmet]['name']);
-            $chestFour.text(gear['chest'][chest]['name']);
-            $armsFour.text(gear['arms'][arms]['name']);
-            $waistFour.text(gear['waist'][waist]['name']);
-            $legsFour.text(gear['legs'][legs]['name']);
 
             let transaction = db.transaction(["loadout"],"readwrite");
 
@@ -521,6 +535,12 @@ $(document).on("pagecreate", function () {
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
+                $weaponFour.text(gear['weapons'][weaponcat][weaponValue]['name']);
+                $helmFour.text(gear['helm'][helmet]['name']);
+                $chestFour.text(gear['chest'][chest]['name']);
+                $armsFour.text(gear['arms'][arms]['name']);
+                $waistFour.text(gear['waist'][waist]['name']);
+                $legsFour.text(gear['legs'][legs]['name']);
             };
             storeRequest.onerror=function() {
                 navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
@@ -579,6 +599,12 @@ $(document).on("pagecreate", function () {
             let objectStore = transaction.objectStore("loadout");
             objectStore.delete(key);
             navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            $weaponFour.text('--None--');
+            $helmFour.text('--None--');
+            $chestFour.text('--None--');
+            $armsFour.text('--None--');
+            $waistFour.text('--None--');
+            $legsFour.text('--None--');
             function alertDismissed(){
                 console.log("Alert Dismissed!");
             }
@@ -597,12 +623,6 @@ $(document).on("pagecreate", function () {
             let waist = WaistValue;
             let legs = LegsValue;
 
-            $weaponFive.text(gear['weapons'][weaponcat][weaponValue]['name']);
-            $helmFive.text(gear['helm'][helmet]['name']);
-            $chestFive.text(gear['chest'][chest]['name']);
-            $armsFive.text(gear['arms'][arms]['name']);
-            $waistFive.text(gear['waist'][waist]['name']);
-            $legsFive.text(gear['legs'][legs]['name']);
 
 
             let loadout={ weaponcat:weaponcat,
@@ -616,6 +636,12 @@ $(document).on("pagecreate", function () {
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
 
+                $weaponFive.text(gear['weapons'][weaponcat][weaponValue]['name']);
+                $helmFive.text(gear['helm'][helmet]['name']);
+                $chestFive.text(gear['chest'][chest]['name']);
+                $armsFive.text(gear['arms'][arms]['name']);
+                $waistFive.text(gear['waist'][waist]['name']);
+                $legsFive.text(gear['legs'][legs]['name']);
             };
             storeRequest.onerror=function() {
                 navigator.notification.alert("Database Error: cannot save Loadout Info", alertDismissed, "Loadout Not Saved", "Done");
@@ -674,9 +700,16 @@ $(document).on("pagecreate", function () {
             let objectStore = transaction.objectStore("loadout");
             objectStore.delete(key);
             navigator.notification.alert("Deleted Loadout '" + key + "'.", alertDismissed, "Loadout Deleted", "Done");
+            $weaponFive.text('--None--');
+            $helmFive.text('--None--');
+            $chestFive.text('--None--');
+            $armsFive.text('--None--');
+            $waistFive.text('--None--');
+            $legsFive.text('--None--');
             function alertDismissed(){
                 console.log("Alert Dismissed!");
             }
+
         });
 
         $('#buttonBrowser').click(openBrowser);
