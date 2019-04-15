@@ -29,7 +29,6 @@ app.initialize();
 
 $(document).on("pagecreate", function () {
 
-
     let requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
@@ -209,6 +208,55 @@ $(document).on("pagecreate", function () {
         let LegsValue = legs.options[legs.selectedIndex].value;
 
 
+        function load(weaponCatLoad, weaponLoad, headLoad, chestLoad, armsLoad, waistLoad, legsLoad){
+
+            $rawDamage.text(gear['weapons'][weaponCatLoad][weaponLoad]['damage']);
+            $eleName.text(gear['weapons'][weaponCatLoad][weaponLoad]['element']);
+            $eleDamage.text(gear['weapons'][weaponCatLoad][weaponLoad]['eledamage']);
+            $affinity.text(gear['weapons'][weaponCatLoad][weaponLoad]['affinity']);
+
+            $helmSkill.text(gear['helm'][headLoad]['Skill']);
+            $helmDefense.text(gear['helm'][headLoad]['defense']);
+            $helmFire.text(gear['helm'][headLoad]['fire']);
+            $helmWater.text(gear['helm'][headLoad]['water']);
+            $helmThunder.text(gear['helm'][headLoad]['thunder']);
+            $helmIce.text(gear['helm'][headLoad]['ice']);
+            $helmDragon.text(gear['helm'][headLoad]['dragon']);
+
+            $chestSkill.text(gear['chest'][chestLoad]['Skill']);
+            $chestDefense.text(gear['chest'][chestLoad]['defense']);
+            $chestFire.text(gear['chest'][chestLoad]['fire']);
+            $chestWater.text(gear['chest'][chestLoad]['water']);
+            $chestThunder.text(gear['chest'][chestLoad]['thunder']);
+            $chestIce.text(gear['chest'][chestLoad]['ice']);
+            $chestDragon.text(gear['chest'][chestLoad]['dragon']);
+
+            $armsSkill.text(gear['arms'][armsLoad]['Skill']);
+            $armsDefense.text(gear['arms'][armsLoad]['defense']);
+            $armsFire.text(gear['arms'][armsLoad]['fire']);
+            $armsWater.text(gear['arms'][armsLoad]['water']);
+            $armsThunder.text(gear['arms'][armsLoad]['thunder']);
+            $armsIce.text(gear['arms'][armsLoad]['ice']);
+            $armsDragon.text(gear['arms'][armsLoad]['dragon']);
+
+            $waistSkill.text(gear['waist'][waistLoad]['Skill']);
+            $waistDefense.text(gear['waist'][waistLoad]['defense']);
+            $waistFire.text(gear['waist'][waistLoad]['fire']);
+            $waistWater.text(gear['waist'][waistLoad]['water']);
+            $waistThunder.text(gear['waist'][waistLoad]['thunder']);
+            $waistIce.text(gear['waist'][waistLoad]['ice']);
+            $waistDragon.text(gear['waist'][waistLoad]['dragon']);
+
+            $legsSkill.text(gear['legs'][legsLoad]['Skill']);
+            $legsDefense.text(gear['legs'][legsLoad]['defense']);
+            $legsFire.text(gear['legs'][legsLoad]['fire']);
+            $legsWater.text(gear['legs'][legsLoad]['water']);
+            $legsThunder.text(gear['legs'][legsLoad]['thunder']);
+            $legsIce.text(gear['legs'][legsLoad]['ice']);
+            $legsDragon.text(gear['legs'][legsLoad]['dragon']);
+        }
+
+
         $('#saveOne').click(function(event){
             event.preventDefault();
             navigator.vibrate(500);
@@ -251,6 +299,44 @@ $(document).on("pagecreate", function () {
                 console.log("Alert Dismissed!");
             }
 
+        });
+
+        $('#loadOne').click(function (event) {
+            event.preventDefault();
+            let key = "1";
+            //window.alert("ayo button was pressed");
+            let storeRequest = db.transaction(["loadout"],"readwrite")
+                .objectStore("loadout").get(key);
+            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
+
+            storeRequest.onsuccess=function() {
+
+                if ((storeRequest.result) && ("key" in storeRequest.result)) {
+                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
+                        " Weapon Value: " + storeRequest.result.weapon +
+                        " Helmet Value :" + storeRequest.result.helmet +
+                        " Arms Value: " + storeRequest.result.arms +
+                        " Chest Value: " + storeRequest.result.chest +
+                        " Legs Value: " + storeRequest.result.legs +
+                        " Waist Value: " + storeRequest.result.waist) ;
+
+                    $weaponOne.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmOne.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestOne.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsOne.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistOne.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsOne.text(gear['legs'][storeRequest.result.legs]['name']);
+
+                    load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
+                }
+                else {
+                    navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
+                }
+            };
+            function alertDismissed(){
+                console.log("Alert Dismissed!");
+            }
         });
 
         $('#deleteOne').click(function (event) {
@@ -342,6 +428,7 @@ $(document).on("pagecreate", function () {
                     $waistTwo.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsTwo.text(gear['legs'][storeRequest.result.legs]['name']);
 
+                    load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -441,6 +528,8 @@ $(document).on("pagecreate", function () {
                     $armsThree.text(gear['arms'][storeRequest.result.arms]['name']);
                     $waistThree.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsThree.text(gear['legs'][storeRequest.result.legs]['name']);
+
+                    load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -541,6 +630,7 @@ $(document).on("pagecreate", function () {
                     $waistFour.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsFour.text(gear['legs'][storeRequest.result.legs]['name']);
 
+                    load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -641,7 +731,8 @@ $(document).on("pagecreate", function () {
                     $armsFive.text(gear['arms'][storeRequest.result.arms]['name']);
                     $waistFive.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsFive.text(gear['legs'][storeRequest.result.legs]['name']);
-
+                    
+                    load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -836,51 +927,6 @@ $(document).on("pagecreate", function () {
                 $legsIce.text(gear['legs'][LegsValue]['ice']);
                 $legsDragon.text(gear['legs'][LegsValue]['dragon']);
             }
-
-            $('#loadOne').click(function (event) {
-                event.preventDefault();
-                let key = "1";
-                //window.alert("ayo button was pressed");
-                let storeRequest = db.transaction(["loadout"],"readwrite")
-                    .objectStore("loadout").get(key);
-                //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
-                storeRequest.onsuccess=function() {
-
-                    if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                        // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                        window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                            " Weapon Value: " + storeRequest.result.weapon +
-                            " Helmet Value :" + storeRequest.result.helmet +
-                            " Arms Value: " + storeRequest.result.arms +
-                            " Chest Value: " + storeRequest.result.chest +
-                            " Legs Value: " + storeRequest.result.legs +
-                            " Waist Value: " + storeRequest.result.waist) ;
-
-                        $weaponOne.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
-                        $helmOne.text(gear['helm'][storeRequest.result.helmet]['name']);
-                        $chestOne.text(gear['chest'][storeRequest.result.chest]['name']);
-                        $armsOne.text(gear['arms'][storeRequest.result.arms]['name']);
-                        $waistOne.text(gear['waist'][storeRequest.result.waist]['name']);
-                        $legsOne.text(gear['legs'][storeRequest.result.legs]['name']);
-
-                        selectWeaponCategory.selectedIndex = storeRequest.result.weaponcat;
-                        selectWeapon.selectedIndex = storeRequest.result.weapon;
-                        helm.selectedIndex = storeRequest.result.helmet;
-                        chest.selectedIndex = storeRequest.result.chest;
-                        arms.selectedIndex = storeRequest.result.arms;
-                        waist.selectedIndex = storeRequest.result.waist;
-                        legs.selectedIndex = storeRequest.result.legs;
-                    }
-                    else {
-                        navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
-                    }
-                };
-                function alertDismissed(){
-                    console.log("Alert Dismissed!");
-                }
-            });
-
         });
     };
 });
