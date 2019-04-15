@@ -27,7 +27,8 @@ let app = {
 
 app.initialize();
 
-$(document).on("pagecreate", function () {
+$(document).on("pagecreate", function (event) {
+    event.preventDefault();
 
     let requestURL = 'https://raw.githubusercontent.com/clarksoc/Babanski_Final_Project/master/www/js/equipment.JSON';
     let request = new XMLHttpRequest();
@@ -92,8 +93,6 @@ $(document).on("pagecreate", function () {
         let $legsIce = $('#legsIce');
         let $legsDragon = $('#legsDragon');
 
-        let $total = $('#total');
-        let $totalSkill = $('#totalSkill');
         let $totalDefense = $('#totalDefense');
         let $totalFire = $('#totalFire');
         let $totalWater = $('#totalWater');
@@ -266,7 +265,6 @@ $(document).on("pagecreate", function () {
 
         $('#saveOne').click(function(event){
             event.preventDefault();
-            navigator.vibrate(500);
             let key = "1";
             let weaponcat = weaponCategoryValue;
             let weapon = weaponValue;
@@ -289,6 +287,7 @@ $(document).on("pagecreate", function () {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout one successfully saved!", alertDismissed, "Loadout Saved", "Done");
+                navigator.vibrate(500);
                 $weaponOne.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmOne.text(gear['helm'][helmet]['name']);
                 $chestOne.text(gear['chest'][chest]['name']);
@@ -311,15 +310,13 @@ $(document).on("pagecreate", function () {
         $('#loadOne').click(function (event) {
             event.preventDefault();
             let key = "1";
-            //window.alert("ayo button was pressed");
             let storeRequest = db.transaction(["loadout"],"readwrite")
                 .objectStore("loadout").get(key);
-            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
 
             storeRequest.onsuccess=function() {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
                     window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
                         " Weapon Value: " + storeRequest.result.weapon +
                         " Helmet Value :" + storeRequest.result.helmet +
@@ -366,7 +363,6 @@ $(document).on("pagecreate", function () {
 
         $('#saveTwo').click(function(event){
             event.preventDefault();
-            navigator.vibrate([500, 500, 500]);
             let key = "2";
             let weaponcat = weaponCategoryValue;
             let weapon = weaponValue;
@@ -388,7 +384,7 @@ $(document).on("pagecreate", function () {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout two successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
+                navigator.vibrate([500, 500, 500]);
                 $weaponTwo.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmTwo.text(gear['helm'][helmet]['name']);
                 $chestTwo.text(gear['chest'][chest]['name']);
@@ -411,15 +407,13 @@ $(document).on("pagecreate", function () {
         $('#loadTwo').click(function (event) {
             event.preventDefault();
             let key = "2";
-            //window.alert("ayo button was pressed");
             let storeRequest = db.transaction(["loadout"],"readwrite")
                 .objectStore("loadout").get(key);
-            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
 
             storeRequest.onsuccess=function() {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
                     window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
                         " Weapon Value: " + storeRequest.result.weapon +
                         " Helmet Value :" + storeRequest.result.helmet +
@@ -467,7 +461,6 @@ $(document).on("pagecreate", function () {
 
         $('#saveThree').click(function(event){
             event.preventDefault();
-            navigator.vibrate([500, 500, 500, 500, 500]);
             let key = "3";
             let weaponcat = weaponCategoryValue;
             let weapon = weaponValue;
@@ -489,7 +482,7 @@ $(document).on("pagecreate", function () {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout three successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
+                navigator.vibrate([500, 500, 500, 500, 500]);
                 $weaponThree.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmThree.text(gear['helm'][helmet]['name']);
                 $chestThree.text(gear['chest'][chest]['name']);
@@ -512,15 +505,13 @@ $(document).on("pagecreate", function () {
         $('#loadThree').click(function (event) {
             event.preventDefault();
             let key = "3";
-            //window.alert("ayo button was pressed");
             let storeRequest = db.transaction(["loadout"],"readwrite")
                 .objectStore("loadout").get(key);
-            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
 
             storeRequest.onsuccess=function() {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
                     window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
                         " Weapon Value: " + storeRequest.result.weapon +
                         " Helmet Value :" + storeRequest.result.helmet +
@@ -568,7 +559,6 @@ $(document).on("pagecreate", function () {
 
         $('#saveFour').click(function(event){
             event.preventDefault();
-            navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
             let key = "4";
             let weaponcat = weaponCategoryValue;
             let weapon = weaponValue;
@@ -590,7 +580,7 @@ $(document).on("pagecreate", function () {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout four successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
+                navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
                 $weaponFour.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmFour.text(gear['helm'][helmet]['name']);
                 $chestFour.text(gear['chest'][chest]['name']);
@@ -613,15 +603,12 @@ $(document).on("pagecreate", function () {
         $('#loadFour').click(function (event) {
             event.preventDefault();
             let key = "4";
-            //window.alert("ayo button was pressed");
             let storeRequest = db.transaction(["loadout"],"readwrite")
                 .objectStore("loadout").get(key);
-            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
             storeRequest.onsuccess=function() {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
                     window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
                         " Weapon Value: " + storeRequest.result.weapon +
                         " Helmet Value :" + storeRequest.result.helmet +
@@ -670,7 +657,6 @@ $(document).on("pagecreate", function () {
 
         $('#saveFive').click(function(event){
             event.preventDefault();
-            navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
             let key = "5";
             let weaponcat = weaponCategoryValue;
             let weapon = weaponValue;
@@ -692,7 +678,7 @@ $(document).on("pagecreate", function () {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
-
+                navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
                 $weaponFive.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmFive.text(gear['helm'][helmet]['name']);
                 $chestFive.text(gear['chest'][chest]['name']);
@@ -715,15 +701,12 @@ $(document).on("pagecreate", function () {
         $('#loadFive').click(function (event) {
             event.preventDefault();
             let key = "5";
-            //window.alert("ayo button was pressed");
             let storeRequest = db.transaction(["loadout"],"readwrite")
                 .objectStore("loadout").get(key);
-            //navigator.notification.alert("test1", alertDismissed, "Loadout Found", "Done");
-
             storeRequest.onsuccess=function() {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
-                    // navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
+                    navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
                     window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
                         " Weapon Value: " + storeRequest.result.weapon +
                         " Helmet Value :" + storeRequest.result.helmet +
