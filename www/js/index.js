@@ -273,7 +273,7 @@ $(document).on("pagecreate", function () {
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
 
-                    // todo in load out table and
+
                     $weaponOne.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmOne.text(gear['helm'][storeRequest.result.helmet]['name']);
                     $chestOne.text(gear['chest'][storeRequest.result.chest]['name']);
@@ -282,12 +282,12 @@ $(document).on("pagecreate", function () {
                     $legsOne.text(gear['legs'][storeRequest.result.legs]['name']);
 
                     selectWeaponCategory.selectedIndex = storeRequest.result.weaponcat;
-                    $weaponOne.selectedIndex = storeRequest.result.weapon;
-                    $helmOne.selectedIndex = storeRequest.result.helmet;
-                    $chestOne.selectedIndex = storeRequest.result.chest;
-                    $armsOne.selectedIndex = storeRequest.result.arms;
-                    $waistOne.selectedIndex = storeRequest.result.waist;
-                    $legsOne.selectedIndex = storeRequest.result.legs;
+                    selectWeapon.selectedIndex = storeRequest.result.weapon;
+                    helm.selectedIndex = storeRequest.result.helmet;
+                    chest.selectedIndex = storeRequest.result.chest;
+                    arms.selectedIndex = storeRequest.result.arms;
+                    waist.selectedIndex = storeRequest.result.waist;
+                    legs.selectedIndex = storeRequest.result.legs;
 
 
                 }
