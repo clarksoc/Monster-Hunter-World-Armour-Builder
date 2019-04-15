@@ -227,6 +227,13 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
+            $weaponOne.text(gear['weapons'][weaponcat][weaponValue]['name']);
+            $helmOne.text(gear['helm'][helmet]['name']);
+            $chestOne.text(gear['chest'][chest]['name']);
+            $armsOne.text(gear['arms'][arms]['name']);
+            $waistOne.text(gear['waist'][waist]['name']);
+            $legsOne.text(gear['legs'][legs]['name']);
+
             let transaction = db.transaction(["loadout"],"readwrite");
 
             let storeRequest = transaction.objectStore("loadout").put(loadout);
@@ -265,6 +272,14 @@ $(document).on("pagecreate", function () {
                         " Chest Value: " + storeRequest.result.chest +
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
+
+                    // todo in load out table and
+                    $weaponOne.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmOne.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestOne.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsOne.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistOne.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsOne.text(gear['legs'][storeRequest.result.legs]['name']);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -306,6 +321,13 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
+            $weaponTwo.text(gear['weapons'][weaponcat][weaponValue]['name']);
+            $helmTwo.text(gear['helm'][helmet]['name']);
+            $chestTwo.text(gear['chest'][chest]['name']);
+            $armsTwo.text(gear['arms'][arms]['name']);
+            $waistTwo.text(gear['waist'][waist]['name']);
+            $legsTwo.text(gear['legs'][legs]['name']);
+
             let transaction = db.transaction(["loadout"],"readwrite");
 
             let storeRequest = transaction.objectStore("loadout").put(loadout);
@@ -344,6 +366,14 @@ $(document).on("pagecreate", function () {
                         " Chest Value: " + storeRequest.result.chest +
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
+
+                    $weaponTwo.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmTwo.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestTwo.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsTwo.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistTwo.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsTwo.text(gear['legs'][storeRequest.result.legs]['name']);
+
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -378,6 +408,13 @@ $(document).on("pagecreate", function () {
             let arms = ArmsValue;
             let waist = WaistValue;
             let legs = LegsValue;
+
+            $weaponThree.text(gear['weapons'][weaponcat][weaponValue]['name']);
+            $helmThree.text(gear['helm'][helmet]['name']);
+            $chestThree.text(gear['chest'][chest]['name']);
+            $armsThree.text(gear['arms'][arms]['name']);
+            $waistThree.text(gear['waist'][waist]['name']);
+            $legsThree.text(gear['legs'][legs]['name']);
 
 
             let loadout={ weaponcat:weaponcat,
@@ -423,6 +460,13 @@ $(document).on("pagecreate", function () {
                         " Chest Value: " + storeRequest.result.chest +
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
+
+                    $weaponThree.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmThree.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestThree.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsThree.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistThree.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsThree.text(gear['legs'][storeRequest.result.legs]['name']);
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -464,6 +508,13 @@ $(document).on("pagecreate", function () {
                 chest:chest, arms:arms,
                 waist:waist, legs:legs, key:key};
 
+            $weaponFour.text(gear['weapons'][weaponcat][weaponValue]['name']);
+            $helmFour.text(gear['helm'][helmet]['name']);
+            $chestFour.text(gear['chest'][chest]['name']);
+            $armsFour.text(gear['arms'][arms]['name']);
+            $waistFour.text(gear['waist'][waist]['name']);
+            $legsFour.text(gear['legs'][legs]['name']);
+
             let transaction = db.transaction(["loadout"],"readwrite");
 
             let storeRequest = transaction.objectStore("loadout").put(loadout);
@@ -502,6 +553,14 @@ $(document).on("pagecreate", function () {
                         " Chest Value: " + storeRequest.result.chest +
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
+
+                    $weaponFour.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmFour.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestFour.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsFour.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistFour.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsFour.text(gear['legs'][storeRequest.result.legs]['name']);
+
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -537,6 +596,13 @@ $(document).on("pagecreate", function () {
             let arms = ArmsValue;
             let waist = WaistValue;
             let legs = LegsValue;
+
+            $weaponFive.text(gear['weapons'][weaponcat][weaponValue]['name']);
+            $helmFive.text(gear['helm'][helmet]['name']);
+            $chestFive.text(gear['chest'][chest]['name']);
+            $armsFive.text(gear['arms'][arms]['name']);
+            $waistFive.text(gear['waist'][waist]['name']);
+            $legsFive.text(gear['legs'][legs]['name']);
 
 
             let loadout={ weaponcat:weaponcat,
@@ -582,6 +648,14 @@ $(document).on("pagecreate", function () {
                         " Chest Value: " + storeRequest.result.chest +
                         " Legs Value: " + storeRequest.result.legs +
                         " Waist Value: " + storeRequest.result.waist) ;
+
+                    $weaponFive.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
+                    $helmFive.text(gear['helm'][storeRequest.result.helmet]['name']);
+                    $chestFive.text(gear['chest'][storeRequest.result.chest]['name']);
+                    $armsFive.text(gear['arms'][storeRequest.result.arms]['name']);
+                    $waistFive.text(gear['waist'][storeRequest.result.waist]['name']);
+                    $legsFive.text(gear['legs'][storeRequest.result.legs]['name']);
+
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
