@@ -209,7 +209,6 @@ $(document).on("pagecreate", function () {
         let LegsValue = legs.options[legs.selectedIndex].value;
 
 
-        //Todo make the load buttons change the proper values patty-chan <3
         $('#saveOne').click(function(event){
             event.preventDefault();
             navigator.vibrate(500);
@@ -252,7 +251,6 @@ $(document).on("pagecreate", function () {
                 console.log("Alert Dismissed!");
             }
 
-
         });
 
         $('#loadOne').click(function (event) {
@@ -282,6 +280,16 @@ $(document).on("pagecreate", function () {
                     $armsOne.text(gear['arms'][storeRequest.result.arms]['name']);
                     $waistOne.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsOne.text(gear['legs'][storeRequest.result.legs]['name']);
+
+                    selectWeaponCategory.selectedIndex = storeRequest.result.weaponcat;
+                    $weaponOne.selectedIndex = storeRequest.result.weapon;
+                    $helmOne.selectedIndex = storeRequest.result.helmet;
+                    $chestOne.selectedIndex = storeRequest.result.chest;
+                    $armsOne.selectedIndex = storeRequest.result.arms;
+                    $waistOne.selectedIndex = storeRequest.result.waist;
+                    $legsOne.selectedIndex = storeRequest.result.legs;
+
+
                 }
                 else {
                     navigator.notification.alert("Loadout with key '" + key + "' not found in the database!", alertDismissed, "Loadout Not Found", "Done");
@@ -780,20 +788,17 @@ $(document).on("pagecreate", function () {
                 selectWeapon.selectedIndex = weaponIndex;
                 $weapons.show();
             }
-
             if (weaponValue === 'default') {
                 $rawDamage.text('0');
                 $eleName.text('--None--');
                 $eleDamage.text('0');
                 $affinity.text('0');
             } else {
-
                 $rawDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['damage']);
                 $eleName.text(gear['weapons'][weaponCategoryValue][weaponValue]['element']);
                 $eleDamage.text(gear['weapons'][weaponCategoryValue][weaponValue]['eledamage']);
                 $affinity.text(gear['weapons'][weaponCategoryValue][weaponValue]['affinity']);
             }
-
             if (HelmValue === 'default') {
                 $helmSkill.text('--None--');
                 $helmDefense.text('0');
@@ -879,15 +884,6 @@ $(document).on("pagecreate", function () {
                 $legsIce.text(gear['legs'][LegsValue]['ice']);
                 $legsDragon.text(gear['legs'][LegsValue]['dragon']);
             }
-
         });
-
-
-
-
-
-
-
     };
-
 });
