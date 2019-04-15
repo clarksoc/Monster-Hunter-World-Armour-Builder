@@ -254,6 +254,13 @@ $(document).on("pagecreate", function () {
             $legsThunder.text(gear['legs'][legsLoad]['thunder']);
             $legsIce.text(gear['legs'][legsLoad]['ice']);
             $legsDragon.text(gear['legs'][legsLoad]['dragon']);
+
+            $totalDefense.text((parseInt($helmDefense.text(), 10) + parseInt($chestDefense.text(),10) + parseInt($armsDefense.text(),10) + parseInt($waistDefense.text(),10) + parseInt($legsDefense.text(),10)));
+            $totalFire.text((parseInt($helmFire.text(), 10) + parseInt($chestFire.text(),10) + parseInt($armsFire.text(),10) + parseInt($waistFire.text(),10) + parseInt($legsFire.text(),10)));
+            $totalWater.text((parseInt($helmWater.text(), 10) + parseInt($chestWater.text(),10) + parseInt($armsWater.text(),10) + parseInt($waistWater.text(),10) + parseInt($legsWater.text(),10)));
+            $totalThunder.text((parseInt($helmThunder.text(), 10) + parseInt($chestThunder.text(),10) + parseInt($armsThunder.text(),10) + parseInt($waistThunder.text(),10) + parseInt($legsThunder.text(),10)));
+            $totalIce.text((parseInt($helmIce.text(), 10) + parseInt($chestIce.text(),10) + parseInt($armsIce.text(),10) + parseInt($waistIce.text(),10) + parseInt($legsIce.text(),10)));
+            $totalDragon.text((parseInt($helmDragon.text(), 10) + parseInt($chestDragon.text(),10) + parseInt($armsDragon.text(),10) + parseInt($waistDragon.text(),10) + parseInt($legsDragon.text(),10)));
         }
 
 
@@ -731,7 +738,7 @@ $(document).on("pagecreate", function () {
                     $armsFive.text(gear['arms'][storeRequest.result.arms]['name']);
                     $waistFive.text(gear['waist'][storeRequest.result.waist]['name']);
                     $legsFive.text(gear['legs'][storeRequest.result.legs]['name']);
-                    
+
                     load(storeRequest.result.weaponcat, storeRequest.result.weapon, storeRequest.result.helmet, storeRequest.result.chest, storeRequest.result.arms, storeRequest.result.waist, storeRequest.result.legs);
                 }
                 else {
@@ -927,6 +934,13 @@ $(document).on("pagecreate", function () {
                 $legsIce.text(gear['legs'][LegsValue]['ice']);
                 $legsDragon.text(gear['legs'][LegsValue]['dragon']);
             }
+
+            $totalDefense.text((parseInt($helmDefense.text(), 10) + parseInt($chestDefense.text(),10) + parseInt($armsDefense.text(),10) + parseInt($waistDefense.text(),10) + parseInt($legsDefense.text(),10)));
+            $totalFire.text((parseInt($helmFire.text(), 10) + parseInt($chestFire.text(),10) + parseInt($armsFire.text(),10) + parseInt($waistFire.text(),10) + parseInt($legsFire.text(),10)));
+            $totalWater.text((parseInt($helmWater.text(), 10) + parseInt($chestWater.text(),10) + parseInt($armsWater.text(),10) + parseInt($waistWater.text(),10) + parseInt($legsWater.text(),10)));
+            $totalThunder.text((parseInt($helmThunder.text(), 10) + parseInt($chestThunder.text(),10) + parseInt($armsThunder.text(),10) + parseInt($waistThunder.text(),10) + parseInt($legsThunder.text(),10)));
+            $totalIce.text((parseInt($helmIce.text(), 10) + parseInt($chestIce.text(),10) + parseInt($armsIce.text(),10) + parseInt($waistIce.text(),10) + parseInt($legsIce.text(),10)));
+            $totalDragon.text((parseInt($helmDragon.text(), 10) + parseInt($chestDragon.text(),10) + parseInt($armsDragon.text(),10) + parseInt($waistDragon.text(),10) + parseInt($legsDragon.text(),10)));
         });
     };
 });
