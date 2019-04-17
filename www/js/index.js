@@ -167,7 +167,8 @@ $(document).on("pagecreate", function (event) {
             0: 'Greatsword',
             1: 'Longsword',
             2: 'Sword and Shield',
-            3: 'Hammer'
+            3: 'Hammer',
+            4: 'Hunting Horn'
         };
 
         let selectWeaponCategory = $selectWeaponCat.get(0);

@@ -196,6 +196,64 @@
         "eledamage": 180,
         "affinity": 15
       }
+    ],
+    [
+      {
+        "name": "Bone Horn I",
+        "damage": 420,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Bone Horn II",
+        "damage": 462,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Bone Horn III",
+        "damage": 504,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Hard Bone Horn I",
+        "damage": 588,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Hard Bone Horn II",
+        "damage": 630,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Hard Bone Horn III",
+        "damage": 672,
+        "element": "ice",
+        "eledamage": 180,
+        "affinity": 0
+      },
+      {
+        "name": "Gama Horn I",
+        "damage": 756,
+        "element": "blast",
+        "eledamage": 120,
+        "affinity": 0
+      },
+      {
+        "name": "Gama Horn II",
+        "damage": 798,
+        "element": "blast",
+        "eledamage": 150,
+        "affinity": 0
+      }
     ]
   ],
   "helm": [
