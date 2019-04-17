@@ -23,6 +23,9 @@
     <platform name="android">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <splash density="land-hdpi" src="res/screen/android/MonsterHunterIcon.jpg" />
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="SplashScreenDelay" value="3000" />
     </platform>
     <preference name="orientation" value="landscape" />
     <plugin name="cordova-plugin-listpicker" spec="^2.2.2" />
@@ -30,6 +33,6 @@
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-    <engine name="android" spec="^7.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <engine name="android" spec="^7.1.4" />
 </widget>
