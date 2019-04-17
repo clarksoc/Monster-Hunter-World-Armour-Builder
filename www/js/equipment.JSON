@@ -115,6 +115,87 @@
         "eledamage": 210,
         "affinity": -10
       }
+    ],
+    [
+      {
+        "name": "Hunter's Knife I",
+        "damage": 112,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Hunter's Knife II",
+        "damage": 126,
+        "element": "normal",
+        "eledamage": 0,
+        "affinity": 0
+      },
+      {
+        "name": "Blooming Knife I",
+        "damage": 140,
+        "element": "poison",
+        "eledamage": 210,
+        "affinity": 0
+      },
+      {
+        "name": "Girros Knife I",
+        "damage": 168,
+        "element": "paralysis",
+        "eledamage": 120,
+        "affinity": 10
+      },
+      {
+        "name": "Girros Knife II",
+        "damage": 182,
+        "element": "paralysis",
+        "eledamage": 150,
+        "affinity": 10
+      },
+      {
+        "name": "Malady's Tabar I",
+        "damage": 196,
+        "element": "paralysis",
+        "eledamage": 180,
+        "affinity": 20
+      },
+      {
+        "name": "Malady's Tabar II",
+        "damage": 210,
+        "element": "paralysis",
+        "eledamage": 210,
+        "affinity": 20
+      },
+      {
+        "name": "Malady's Tabar III",
+        "damage": 224,
+        "element": "paralysis",
+        "eledamage": 240,
+        "affinity": 20
+      }
+    ],
+    [
+      {
+        "name": "Blacksteel Hammer I",
+        "damage": 520,
+        "element": "dragon",
+        "eledamage": 120,
+        "affinity": 0
+      },
+      {
+        "name": "Blacksteel Hammer II",
+        "damage": 572,
+        "element": "dragon",
+        "eledamage": 150,
+        "affinity": 0
+      },
+      {
+        "name": "Xeno Maph'agarna",
+        "damage": 884,
+        "element": "poison",
+        "eledamage": 180,
+        "affinity": 15
+      }
     ]
   ],
   "helm": [
