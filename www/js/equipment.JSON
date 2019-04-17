@@ -137,6 +137,26 @@
       "thunder": -3,
       "ice": 4,
       "dragon": -2
+    },
+    {
+      "name": "Hunter's Headgear",
+      "Skill": "Scoutfly range up",
+      "defense": 6,
+      "fire": 2,
+      "water": 2,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Ingot helm α",
+      "Skill": "Thunder attack +2",
+      "defense": 50,
+      "fire": -2,
+      "water": 0,
+      "thunder": 3,
+      "ice": -1,
+      "dragon": 0
     }
   ],
 
