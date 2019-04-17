@@ -653,7 +653,7 @@ $(document).on("pagecreate", function (event) {
             let storeRequest = transaction.objectStore("loadout").put(loadout);
             storeRequest.onsuccess =function() {
                 navigator.notification.alert("Loadout five successfully saved!", alertDismissed, "Loadout Saved", "Done");
-                navigator.vibrate([500, 500, 500, 500, 500, 500, 500]);
+                navigator.vibrate([500, 500, 500, 500, 500, 500, 500, 500, 500]);
                 $weaponFive.text(gear['weapons'][weaponcat][weaponValue]['name']);
                 $helmFive.text(gear['helm'][helmet]['name']);
                 $chestFive.text(gear['chest'][chest]['name']);
