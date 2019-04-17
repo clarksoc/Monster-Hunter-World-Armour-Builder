@@ -317,13 +317,6 @@ $(document).on("pagecreate", function (event) {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
                     navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                        " Weapon Value: " + storeRequest.result.weapon +
-                        " Helmet Value :" + storeRequest.result.helmet +
-                        " Arms Value: " + storeRequest.result.arms +
-                        " Chest Value: " + storeRequest.result.chest +
-                        " Legs Value: " + storeRequest.result.legs +
-                        " Waist Value: " + storeRequest.result.waist) ;
 
                     $weaponOne.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmOne.text(gear['helm'][storeRequest.result.helmet]['name']);
@@ -414,13 +407,6 @@ $(document).on("pagecreate", function (event) {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
                     navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                        " Weapon Value: " + storeRequest.result.weapon +
-                        " Helmet Value :" + storeRequest.result.helmet +
-                        " Arms Value: " + storeRequest.result.arms +
-                        " Chest Value: " + storeRequest.result.chest +
-                        " Legs Value: " + storeRequest.result.legs +
-                        " Waist Value: " + storeRequest.result.waist) ;
 
                     $weaponTwo.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmTwo.text(gear['helm'][storeRequest.result.helmet]['name']);
@@ -512,13 +498,6 @@ $(document).on("pagecreate", function (event) {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
                     navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                        " Weapon Value: " + storeRequest.result.weapon +
-                        " Helmet Value :" + storeRequest.result.helmet +
-                        " Arms Value: " + storeRequest.result.arms +
-                        " Chest Value: " + storeRequest.result.chest +
-                        " Legs Value: " + storeRequest.result.legs +
-                        " Waist Value: " + storeRequest.result.waist) ;
 
                     $weaponThree.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmThree.text(gear['helm'][storeRequest.result.helmet]['name']);
@@ -609,13 +588,6 @@ $(document).on("pagecreate", function (event) {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
                     navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                        " Weapon Value: " + storeRequest.result.weapon +
-                        " Helmet Value :" + storeRequest.result.helmet +
-                        " Arms Value: " + storeRequest.result.arms +
-                        " Chest Value: " + storeRequest.result.chest +
-                        " Legs Value: " + storeRequest.result.legs +
-                        " Waist Value: " + storeRequest.result.waist) ;
 
                     $weaponFour.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmFour.text(gear['helm'][storeRequest.result.helmet]['name']);
@@ -707,13 +679,6 @@ $(document).on("pagecreate", function (event) {
 
                 if ((storeRequest.result) && ("key" in storeRequest.result)) {
                     navigator.notification.alert("Loadout '" + key + "' Selected.", alertDismissed, "Loadout Found", "Done");
-                    window.alert("Weapon Category Value: " + storeRequest.result.weaponcat +
-                        " Weapon Value: " + storeRequest.result.weapon +
-                        " Helmet Value :" + storeRequest.result.helmet +
-                        " Arms Value: " + storeRequest.result.arms +
-                        " Chest Value: " + storeRequest.result.chest +
-                        " Legs Value: " + storeRequest.result.legs +
-                        " Waist Value: " + storeRequest.result.waist) ;
 
                     $weaponFive.text(gear['weapons'][storeRequest.result.weaponcat][storeRequest.result.weapon]['name']);
                     $helmFive.text(gear['helm'][storeRequest.result.helmet]['name']);
