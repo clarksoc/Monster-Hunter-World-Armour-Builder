@@ -149,7 +149,7 @@
       "dragon": 0
     },
     {
-      "name": "Ingot helm α",
+      "name": "Ingot Helm α",
       "Skill": "Thunder attack +2",
       "defense": 50,
       "fire": -2,
@@ -157,6 +157,26 @@
       "thunder": 3,
       "ice": -1,
       "dragon": 0
+    },
+    {
+      "name": "Kadachi Helm",
+      "Skill": "Constitution +1",
+      "defense": 16,
+      "fire": 0,
+      "water": -3,
+      "thunder": 3,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Vangis helm α",
+      "Skill": "Partbreaker +1; Handicraft +1",
+      "defense": 58,
+      "fire": 1,
+      "water": 1,
+      "thunder": -3,
+      "ice": 2,
+      "dragon": 3
     }
   ],
 
@@ -180,6 +200,46 @@
       "thunder": -3,
       "ice": 4,
       "dragon": -2
+    },
+    {
+      "name": "Hunter's Mail",
+      "Skill": "Slinger capacity +1",
+      "defense": 6,
+      "fire": 2,
+      "water": 2,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Ingot Mail α",
+      "Skill": "Thunder resistance +2",
+      "defense": 50,
+      "fire": -2,
+      "water": 0,
+      "thunder": 3,
+      "ice": -1,
+      "dragon": 0
+    },
+    {
+      "name": "Kadachi Mail",
+      "Skill": "Jump master +1",
+      "defense": 16,
+      "fire": 0,
+      "water": -3,
+      "thunder": 3,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Vangis Mail α",
+      "Skill": "Speed eating +1; Handicraft +1",
+      "defense": 58,
+      "fire": 1,
+      "water": 1,
+      "thunder": -3,
+      "ice": 2,
+      "dragon": 3
     }
   ],
 
@@ -203,6 +263,46 @@
       "thunder": -3,
       "ice": 4,
       "dragon": -2
+    },
+    {
+      "name": "Hunter's Vambraces",
+      "Skill": "Stealth +1",
+      "defense": 6,
+      "fire": 2,
+      "water": 2,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Ingot Vambraces α",
+      "Skill": "Health Boost +2; Thunder Attack + 1",
+      "defense": 50,
+      "fire": -2,
+      "water": 0,
+      "thunder": 3,
+      "ice": -1,
+      "dragon": 0
+    },
+    {
+      "name": "Kadachi Vambraces",
+      "Skill": "Evade Extender +1",
+      "defense": 16,
+      "fire": 0,
+      "water": -3,
+      "thunder": 3,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Vangis Vambraces α",
+      "Skill": "Latent Power +2; Partbreaker +1",
+      "defense": 58,
+      "fire": 1,
+      "water": 1,
+      "thunder": -3,
+      "ice": 2,
+      "dragon": 3
     }
   ],
 
@@ -226,6 +326,46 @@
       "thunder": -3,
       "ice": 4,
       "dragon": -2
+    },
+    {
+      "name": "Hunter's Coil",
+      "Skill": "Scenthound +1",
+      "defense": 6,
+      "fire": 2,
+      "water": 2,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Ingot Coil α",
+      "Skill": "Windproof +2",
+      "defense": 50,
+      "fire": -2,
+      "water": 0,
+      "thunder": 3,
+      "ice": -1,
+      "dragon": 0
+    },
+    {
+      "name": "Kadachi Coil",
+      "Skill": "Thunder Attack +1",
+      "defense": 16,
+      "fire": 0,
+      "water": -3,
+      "thunder": 3,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Vangis Coil α",
+      "Skill": "Latent Power +1; Handicraft +1",
+      "defense": 58,
+      "fire": 1,
+      "water": 1,
+      "thunder": -3,
+      "ice": 2,
+      "dragon": 3
     }
   ],
 
@@ -249,6 +389,46 @@
       "thunder": -3,
       "ice": 4,
       "dragon": -2
+    },
+    {
+      "name": "Hunter's Greaves",
+      "Skill": "BBQ master +1",
+      "defense": 6,
+      "fire": 2,
+      "water": 2,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Ingot Greaves α",
+      "Skill": "Defense boost +2; Windproof +1",
+      "defense": 50,
+      "fire": -2,
+      "water": 0,
+      "thunder": 3,
+      "ice": -1,
+      "dragon": 0
+    },
+    {
+      "name": "Kadachi Greaves",
+      "Skill": "Thunder Resistance +1",
+      "defense": 16,
+      "fire": 0,
+      "water": -3,
+      "thunder": 3,
+      "ice": 0,
+      "dragon": 0
+    },
+    {
+      "name": "Vangis Greaves α",
+      "Skill": "Speed Eating +2; Partbreaker +1",
+      "defense": 58,
+      "fire": 1,
+      "water": 1,
+      "thunder": -3,
+      "ice": 2,
+      "dragon": 3
     }
   ]
 }
