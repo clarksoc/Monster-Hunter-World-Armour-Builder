@@ -38,3 +38,8 @@ Monster Hunter World Wiki (In App Browser):
 - Improve the UI to make it more pleasing to interact with
 - Add a Jewel function for the loadouts
 - Add the complete database of Weapons, Armours, and Jewels
+
+## Contributors
+
+- **[Connor Clarkson](https://github.com/clarksoc)** - *Implementation of APIs as well as JavaScript, JQuerry, HTML, and CSS Coding*
+- **[Patrick Ouellette](https://github.com/Waymaker208)** - *Implementation of JSON database as well as calls to the database to retrieve information*
