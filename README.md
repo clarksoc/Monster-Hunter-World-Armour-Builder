@@ -39,6 +39,8 @@ Monster Hunter World Wiki (In App Browser):
 - Add a Jewel function for the loadouts
 - Add the complete database of Weapons, Armours, and Jewels
 
+--FUTURE OF THE APP WILL BE A COMPLETE REWRITE TO FLUTTER/DART INSTEAD OF CORDOVA--
+
 ## Contributors
 
 - **[Connor Clarkson](https://github.com/clarksoc)** - *Implementation of APIs as well as JavaScript, JQuerry, HTML, and CSS Coding*
